@@ -35,6 +35,53 @@
     <link rel="stylesheet" href="style.css">
     <!-- CSS exclusivo da imagem e dos titulos responsivos -->
     <link rel="stylesheet" href="hero-responsivo.css">
+    <!-- Estilo dos links dos projetos em destaque -->
+    <style>
+        .trabalho-projeto-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            width: fit-content;
+            color: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            transition: opacity .2s ease;
+        }
+        .trabalho-projeto-link:hover,
+        .trabalho-projeto-link:focus-visible {
+            color: inherit;
+            opacity: .7;
+            text-decoration: underline;
+        }
+    </style>
+
+
+    <!-- Botões de contorno arredondado dos projetos em destaque -->
+    <style>
+        .trabalho-botao-circular {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-height: 46px;
+            padding: 0 22px;
+            border-radius: 999px;
+            border: 1px solid currentColor;
+            color: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+            text-decoration: none;
+            margin-top: 22px;
+            transition: transform .2s ease, background .2s ease;
+        }
+        .trabalho-botao-circular:hover,
+        .trabalho-botao-circular:focus-visible {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,.12);
+            color: inherit;
+        }
+    </style>
 
 </head>
 
@@ -59,40 +106,40 @@
         <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="modooff.html">Modo Off</a></li>
-                <li class="nav-item"><a class="nav-link" href="#trabalhos">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
                 <li class="nav-item"><a class="nav-link" href="fotografia.html">Fotografias</a></li>
                 <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
                 <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
             </ul>
 
-            <!-- Ícones sociais no desktop -->
+   <!-- Ícones sociais no desktop -->
             <div class="menu-redes-desktop d-none d-lg-flex" aria-label="Redes sociais">
-                <a href="https://www.instagram.com/SEU_USUARIO/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="bi bi-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.youtube.com/@SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                     <i class="bi bi-youtube" aria-hidden="true"></i>
                 </a>
-                <a href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <i class="bi bi-github" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/SEU_USUARIO/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <i class="bi bi-linkedin" aria-hidden="true"></i>
                 </a>
             </div>
 
             <!-- Os mesmos ícones no menu recolhido -->
             <div class="menu-redes d-lg-none" aria-label="Redes sociais">
-                <a href="https://www.instagram.com/SEU_USUARIO/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="bi bi-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.youtube.com/@SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                     <i class="bi bi-youtube" aria-hidden="true"></i>
                 </a>
-                <a href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <i class="bi bi-github" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/SEU_USUARIO/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <i class="bi bi-linkedin" aria-hidden="true"></i>
                 </a>
             </div>
@@ -178,7 +225,7 @@
             <!-- ÁREA CLICÁVEL PROGRAMAÇÃO -->
 
             <a
-                href="programacao.html"
+                href="projetos.html"
                 class="hero-link link-programacao"
                 aria-label="Conhecer meus projetos de programação"
             ></a>
@@ -252,7 +299,7 @@
 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-                    <!-- LOJA SOMY -->
+                    <!-- CARD LOJA SOMY -->
                     <div class="col">
                         <article class="card trabalho-card h-100">
                             <div class="trabalho-capa capa-figma">
@@ -261,18 +308,20 @@
                             <div class="card-body d-flex flex-column">
                                 <span class="trabalho-categoria">BANCO DE DADOS</span>
                                 <h3 class="card-title mt-2">Loja Somy</h3>
-                                <p class="card-text mb-3">
-                                    Banco de dados para uma loja de games, com
-                                    gerenciamento de produtos, clientes, vendas e estoque.
+                                <p class="card-text">
+                                    Banco de dados de uma loja de games, com produtos,
+                                    clientes, vendas e gerenciamento de estoque.
                                 </p>
-                                <a href="projetos.html" class="btn btn-outline-light mt-auto">
+                                <a href="projetos.html" class="trabalho-botao-circular mt-auto"
+                                   aria-label="Ver projeto Loja Somy na página de projetos"
+                                   title="Ver projeto Loja Somy">
                                     Ver projeto
                                 </a>
                             </div>
                         </article>
                     </div>
 
-                    <!-- LEI QUEST -->
+                    <!-- CARD LEI QUEST -->
                     <div class="col">
                         <article class="card trabalho-card h-100">
                             <div class="trabalho-capa capa-fotografia">
@@ -281,31 +330,35 @@
                             <div class="card-body d-flex flex-column">
                                 <span class="trabalho-categoria">DESIGN DE INTERFACE</span>
                                 <h3 class="card-title mt-2">Lei Quest</h3>
-                                <p class="card-text mb-3">
-                                    Protótipo de aplicativo educacional que combina
-                                    o estudo do Direito com desafios e gamificação.
+                                <p class="card-text">
+                                    Protótipo de aplicativo educacional que une
+                                    o estudo do Direito à gamificação.
                                 </p>
-                                <a href="projetos.html" class="btn btn-outline-light mt-auto">
+                                <a href="projetos.html" class="trabalho-botao-circular mt-auto"
+                                   aria-label="Ver projeto Lei Quest na página de projetos"
+                                   title="Ver projeto Lei Quest">
                                     Ver projeto
                                 </a>
                             </div>
                         </article>
                     </div>
 
-                    <!-- PROGRAMAÇÃO DE COMPUTADORES -->
+                    <!-- CARD PROGRAMAÇÃO DE COMPUTADORES -->
                     <div class="col">
                         <article class="card trabalho-card h-100">
                             <div class="trabalho-capa capa-perfil">
                                 <span>PROGRAMAÇÃO</span>
                             </div>
                             <div class="card-body d-flex flex-column">
-                                <span class="trabalho-categoria">LÓGICA DE PROGRAMAÇÃO</span>
+                                <span class="trabalho-categoria">LÓGICA E ALGORITMOS</span>
                                 <h3 class="card-title mt-2">Programação de Computadores</h3>
-                                <p class="card-text mb-3">
-                                    Exercícios e atividades acadêmicas para praticar
-                                    algoritmos, raciocínio lógico e programação.
+                                <p class="card-text">
+                                    Exercícios e projetos acadêmicos com foco em
+                                    lógica, algoritmos e fundamentos de programação.
                                 </p>
-                                <a href="projetos.html" class="btn btn-outline-light mt-auto">
+                                <a href="projetos.html" class="trabalho-botao-circular mt-auto"
+                                   aria-label="Ver projeto Programação de Computadores na página de projetos"
+                                   title="Ver projeto Programação de Computadores">
                                     Ver projeto
                                 </a>
                             </div>
@@ -315,8 +368,8 @@
                 </div>
 
                 <div class="text-center mt-4">
-                    <a href="projetos.html" class="btn btn-outline-light">
-                        Ver todos os projetos
+                    <a class="trabalho-projeto-link" href="projetos.html">
+                        Ver outrosprojetos <i class="bi bi-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
 
