@@ -1,0 +1,416 @@
+/* Fontes importadas pelo HTML; a navegação e o rodapé seguem Figtree do index.html. */
+
+body.pagina-playlists {
+  --bg: #202326;
+  --panel: #2A2E32;
+  --text: #F5F5F3;
+  --muted: #b8bdc0;
+  --accent: #F5F5F3;
+  --line: rgba(245,245,243,.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.pagina-playlists {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Figtree', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.playlists-container button, .playlists-container a, .playlists-modal button, .playlists-modal a {
+  font: inherit;
+}
+
+.playlists-container a {
+  color: inherit;
+}
+
+.pagina-playlists .playlists-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 clamp(20px, 5vw, 70px) clamp(100px, 10vw, 140px);
+  font-family: 'Figtree', Arial, sans-serif;
+}
+
+/* Mesma posição exata do botão na página de Jogos:
+   a seção .jogos-shell tem 1040px e a .jogos-intro usa este padding-top. */
+.pagina-playlists .topbar {
+  max-width: 1040px;
+  width: calc(100% - 40px);
+  margin-inline: auto;
+  padding-top: clamp(56px, 7vw, 92px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Mesmas medidas, fonte, cores e animação da página Jogos. */
+.pagina-playlists .jogos-voltar {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: clamp(10px, 1.2vw, 13px) clamp(13px, 2vw, 22px);
+  border: 1px solid #f5f5f3;
+  border-radius: 5px;
+  font-family: 'Figtree', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(13px, 1.4vw, 15px);
+  line-height: 1.4;
+  max-width: 100%;
+  white-space: normal;
+  background: #f5f5f3;
+  color: #202326;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+  margin-bottom: 0;
+}
+
+.pagina-playlists .jogos-voltar:hover {
+  background: transparent;
+  color: #f5f5f3;
+  transform: translateY(-2px);
+}
+
+.pagina-playlists .jogos-voltar:focus-visible {
+  outline: 3px solid #f5f5f3;
+  outline-offset: 4px;
+}
+
+.small-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.playlists-hero {
+  padding: clamp(46px, 5.5vw, 70px) 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+}
+
+.playlists-hero h1 {
+  font-family: 'Figtree', Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(58px, 10vw, 125px);
+  letter-spacing: -0.07em;
+  line-height: 1;
+  margin: 18px 0 0;
+}
+
+.playlists-hero h1 span {
+  color: var(--accent);
+}
+
+.hero-description {
+  max-width: 280px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 16px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-family: 'Figtree', Arial, sans-serif;
+  font-weight: 800;
+}
+
+.section-header span {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.playlist-card {
+  position: relative;
+  min-height: 310px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--panel);
+  padding: 28px 23px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform .3s,
+    border-color .3s,
+    box-shadow .3s;
+}
+
+.playlist-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--accent);
+  box-shadow: 0 18px 50px #0006;
+}
+
+.fan {
+  position: relative;
+  height: 165px;
+  width: 190px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.cover {
+  position: absolute;
+  width: 118px;
+  height: 118px;
+  left: calc(50% - 59px);
+  top: 12px;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    var(--color1),
+    var(--color2)
+  );
+  border: 1px solid #ffffff30;
+  box-shadow: 0 12px 25px #0007;
+  display: grid;
+  place-items: center;
+  font-size: 52px;
+  transform-origin: center 115%;
+  transition: transform .35s;
+}
+
+.cover:nth-child(1) {
+  transform: rotate(-20deg) translate(-15px, 4px);
+}
+
+.cover:nth-child(2) {
+  transform: translateY(-5px);
+  background: linear-gradient(
+    135deg,
+    var(--color2),
+    var(--color1)
+  );
+}
+
+.cover:nth-child(3) {
+  transform: rotate(20deg) translate(15px, 4px);
+}
+
+.playlist-card:hover .cover:nth-child(1) {
+  transform: rotate(-28deg) translate(-23px, 4px);
+}
+
+.playlist-card:hover .cover:nth-child(3) {
+  transform: rotate(28deg) translate(23px, 4px);
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 10px;
+}
+
+.number {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.playlist-name {
+  display: block;
+  font-family: 'Figtree', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 9px;
+}
+
+.explore {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.playlist-card:hover .explore {
+  color: white;
+}
+
+/* POP-UP */
+
+.playlists-modal[hidden],
+.playlists-player[hidden],
+.youtube-button[hidden] {
+  display: none;
+}
+
+.playlists-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.playlists-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.82);
+  backdrop-filter: blur(10px);
+}
+
+.playlists-modal-content {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #292D30;
+  border: 1px solid rgba(245,245,243,.18);
+  border-radius: 24px;
+  padding: clamp(22px, 4vw, 36px);
+  box-shadow: 0 25px 100px #000a;
+}
+
+.playlists-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 15px;
+}
+
+.playlists-modal-header h2 {
+  font-family: 'Figtree', Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 10px 0;
+}
+
+.playlists-close {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #3A3F43;
+  color: white;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.playlists-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.playlists-player {
+  margin-top: 25px;
+  aspect-ratio: 16 / 9;
+  background: #1E2124;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.playlists-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.youtube-button {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 50px;
+  background: #F5F5F3;
+  color: #202326;
+  text-decoration: none;
+  margin-top: 22px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.track-message {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.track-icon {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #3B4044;
+  border-radius: 12px;
+  font-size: 30px;
+}
+
+.track-message p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* O rodapé é controlado exclusivamente pelo style.css do index.html. */
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .playlists-hero {
+    display: block;
+    padding: 48px 0 50px;
+  }
+
+  .hero-description {
+    margin-top: 25px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+  }
+
+  .topbar .small-label {
+    display: none;
+  }
+}
+
+/* Protege o padrão do cabeçalho e do rodapé do index.html. */
+.pagina-playlists .playlists-modal { font-family: 'Figtree', Arial, sans-serif; color: var(--text); }
+.pagina-playlists .playlists-container .playlists-hero { position: relative; }
+.pagina-playlists .playlists-container .playlists-hero h1 { color: var(--text); }
+.pagina-playlists .rodape { font-family: 'Figtree', Arial, sans-serif; }
+/* O menu mobile usa o Bootstrap do index; as classes da playlist não o afetam. */
+@media (prefers-reduced-motion: reduce) {
+  .playlist-card, .cover { transition: none; }
+}

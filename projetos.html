@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#202326">
+  <meta name="description" content="Projetos acadêmicos e habilidades de Ricardo Henrique: banco de dados, programação e prototipagem de interfaces.">
+  <title>Projetos | Ricardo Henrique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Navbar e rodape do Modo Off: estilos compartilhados. -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modooff.css">
+  <link rel="stylesheet" href="projetos.css">
+</head>
+<body class="pagina-offline pagina-projetos" id="topo">
+<nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegação principal">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="Ir para a página inicial">
+            <img src="imagens/logo.png" alt="Logo Ricardo Henrique" class="logo-img">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                aria-expanded="false" aria-label="Abrir menu de navegação">
+            <span class="linha"></span>
+            <span class="linha"></span>
+            <span class="linha"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="modooff.html">Modo Off</a></li>
+                <li class="nav-item"><a class="nav-link" href="projetos.html" aria-current="page">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="fotografia.html">Fotografias</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            </ul>
+   <!-- Ícones sociais no desktop -->
+            <div class="menu-redes-desktop d-none d-lg-flex" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- Os mesmos ícones no menu recolhido -->
+            <div class="menu-redes d-lg-none" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="projetos-main" id="inicio">
+  <section class="projetos-intro projetos-shell" aria-labelledby="projetos-titulo">
+    <p class="projetos-etiqueta">PORTFÓLIO / DESENVOLVIMENTO</p>
+    <h1 id="projetos-titulo" class="projetos-titulo">Projetos<span>.</span></h1>
+    <div class="projetos-intro-bottom">
+      <p>Ideias que saíram do papel e se transformaram em projetos.</p>
+      <p>Uma seleção dos meus trabalhos acadêmicos, passando por banco de dados, lógica de programação e prototipagem de interfaces.</p>
+    </div>
+  </section>
+
+  <section class="projetos-colecao projetos-shell" aria-labelledby="projetos-colecao-titulo">
+    <div class="projetos-cabecalho">
+      <div>
+        <p class="projetos-etiqueta">TRABALHOS SELECIONADOS</p>
+        <h2 id="projetos-colecao-titulo">O que já construí<span>.</span></h2>
+      </div>
+      <span class="projetos-total">01 — 04</span>
+    </div>
+
+    <div class="projetos-grade">
+      <!-- 01: Loja Somy -->
+      <article class="projeto-card projeto-card--somy" aria-labelledby="projeto-somy-titulo">
+        <div class="projeto-vitrine projeto-vitrine--somy" aria-hidden="true">
+          <div class="projeto-vitrine-topo"><span>01 / DATABASE</span><i class="bi bi-database-fill"></i></div>
+          <div class="projeto-vitrine-arte projeto-vitrine-arte--somy">
+            <span class="arte-bloco arte-bloco--principal"><i class="bi bi-shop-window"></i></span>
+            <span class="arte-bloco arte-bloco--a"><i class="bi bi-controller"></i></span>
+            <span class="arte-bloco arte-bloco--b"><i class="bi bi-diagram-3"></i></span>
+          </div>
+          <div class="projeto-vitrine-legenda">MODELAGEM · CONSULTAS · RELACIONAMENTOS</div>
+        </div>
+        <div class="projeto-corpo">
+          <p class="projeto-tipo">BANCO DE DADOS <span>·</span> PROJETO ACADÊMICO</p>
+          <h3 id="projeto-somy-titulo">Loja Somy</h3>
+          <p class="projeto-descricao">Banco de dados para uma loja de games, com organização de produtos, clientes, funcionários, vendas e estoque. Um projeto voltado à modelagem e às consultas SQL.</p>
+          <div class="projeto-tags" aria-label="Tecnologias"><span>MySQL</span><span>SQL</span><span>Modelagem de Dados</span></div>
+          <div class="projeto-acoes">
+            <a class="projeto-botao projeto-botao--principal" href="https://github.com/CpLuch/Projeto-database-loja_Somy/archive/HEAD.zip" aria-label="Baixar Loja Somy em ZIP">
+              <i class="bi bi-download" aria-hidden="true"></i> Baixar projeto
+            </a>
+            <a class="projeto-botao projeto-botao--secundario" href="https://github.com/CpLuch/Projeto-database-loja_Somy" target="_blank" rel="noopener noreferrer" aria-label="Ver Loja Somy no GitHub">
+              <i class="bi bi-github" aria-hidden="true"></i> GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02: Lei Quest / Figma -->
+      <article class="projeto-card" aria-labelledby="projeto-lei-titulo">
+        <div class="projeto-vitrine projeto-vitrine--lei" aria-hidden="true">
+          <div class="projeto-vitrine-topo"><span>02 / PROTÓTIPO</span><i class="bi bi-bezier2"></i></div>
+          <div class="projeto-vitrine-arte projeto-vitrine-arte--lei">
+            <span class="arte-bloco arte-bloco--principal"><i class="bi bi-mortarboard"></i></span>
+            <span class="arte-bloco arte-bloco--a"><i class="bi bi-trophy"></i></span>
+            <span class="arte-bloco arte-bloco--b"><i class="bi bi-phone"></i></span>
+          </div>
+          <div class="projeto-vitrine-legenda">UX · INTERFACE · GAMIFICAÇÃO</div>
+        </div>
+        <div class="projeto-corpo">
+          <p class="projeto-tipo">DESIGN DE INTERFACE <span>·</span> PROJETO ACADÊMICO</p>
+          <h3 id="projeto-lei-titulo">Lei Quest</h3>
+          <p class="projeto-descricao">Conceito de aplicativo educacional que une Direito e gamificação. O protótipo apresenta uma experiência de estudo com desafios, perguntas e elementos de progressão.</p>
+          <div class="projeto-tags" aria-label="Tecnologias"><span>Figma</span><span>UI/UX</span><span>Prototipagem</span></div>
+          <div class="projeto-acoes">
+            <a class="projeto-botao projeto-botao--principal" href="https://www.figma.com/design/C0rs0SgXJxATZgn3rvE2zn/Prot%C3%B3tipo-Lei-Quest?node-id=0-1" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver no Figma
+            </a>
+            <a class="projeto-botao projeto-botao--secundario" href="https://github.com/CpLuch/Projeto-Aplicativo-Lei-Quest" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i> GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03: Programação de Computadores -->
+      <article class="projeto-card" aria-labelledby="projeto-codigo-titulo">
+        <div class="projeto-vitrine projeto-vitrine--codigo" aria-hidden="true">
+          <div class="projeto-vitrine-topo"><span>03 / PROGRAMAÇÃO</span><i class="bi bi-terminal"></i></div>
+          <div class="projeto-vitrine-arte projeto-vitrine-arte--codigo">
+            <span class="arte-bloco arte-bloco--principal"><i class="bi bi-code-slash"></i></span>
+            <span class="arte-bloco arte-bloco--a"><i class="bi bi-braces"></i></span>
+            <span class="arte-bloco arte-bloco--b"><i class="bi bi-terminal-fill"></i></span>
+          </div>
+          <div class="projeto-vitrine-legenda">LÓGICA · ALGORITMOS · EXERCÍCIOS</div>
+        </div>
+        <div class="projeto-corpo">
+          <p class="projeto-tipo">PROGRAMAÇÃO <span>·</span> ATIVIDADES ACADÊMICAS</p>
+          <h3 id="projeto-codigo-titulo">Algorítmo de Kaprekar</h3>
+          <p class="projeto-descricao">Repositório de exercícios e trabalhos de programação, reunindo soluções de lógica.</p>
+          <div class="projeto-tags" aria-label="Tecnologias"><span>C</span><span>Algoritmos</span><span>Lógica</span></div>
+          <div class="projeto-acoes">
+            <a class="projeto-botao projeto-botao--principal" href="https://github.com/CpLuch/Projetos-Programa-o-de-Computadores/archive/HEAD.zip" aria-label="Baixar Programação de Computadores em ZIP">
+              <i class="bi bi-download" aria-hidden="true"></i> Baixar projeto
+            </a>
+            <a class="projeto-botao projeto-botao--secundario" href="https://github.com/CpLuch/Projetos-Programa-o-de-Computadores" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i> GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04: Formula 1 -->
+      <article class="projeto-card" aria-labelledby="projeto-f1-titulo">
+        <div class="projeto-vitrine projeto-vitrine--f1" aria-hidden="true">
+          <div class="projeto-vitrine-topo"><span>04 / DATABASE</span><i class="bi bi-database"></i></div>
+          <div class="projeto-vitrine-arte projeto-vitrine-arte--f1">
+            <span class="arte-bloco arte-bloco--principal"><i class="bi bi-flag-fill"></i></span>
+            <span class="arte-bloco arte-bloco--a"><i class="bi bi-speedometer2"></i></span>
+            <span class="arte-bloco arte-bloco--b"><i class="bi bi-diagram-2"></i></span>
+          </div>
+          <div class="projeto-vitrine-legenda">EQUIPES · PILOTOS · DADOS</div>
+        </div>
+        <div class="projeto-corpo">
+          <p class="projeto-tipo">BANCO DE DADOS <span>·</span> PROJETO ACADÊMICO</p>
+          <h3 id="projeto-f1-titulo">Fórmula 1 — Database</h3>
+          <p class="projeto-descricao">Modelagem de banco de dados com temática da Fórmula 1, explorando entidades como pilotos, equipes e países, seus relacionamentos e consultas em SQL.</p>
+          <div class="projeto-tags" aria-label="Tecnologias"><span>MySQL</span><span>SQL</span><span>Relacionamentos</span></div>
+          <div class="projeto-acoes">
+            <a class="projeto-botao projeto-botao--principal" href="https://github.com/CpLuch/Projeto-Formula-1--database/archive/HEAD.zip" aria-label="Baixar Fórmula 1 Database em ZIP">
+              <i class="bi bi-download" aria-hidden="true"></i> Baixar projeto
+            </a>
+            <a class="projeto-botao projeto-botao--secundario" href="https://github.com/CpLuch/Projeto-Formula-1--database" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i> GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="projetos-nota">Os downloads direcionam para os arquivos ZIP dos repositórios no GitHub. O protótipo do Lei Quest abre no Figma.</p>
+  </section>
+
+  <section class="projetos-habilidades" id="skills" aria-labelledby="projetos-skills-titulo">
+    <div class="projetos-shell">
+      <div class="projetos-cabecalho projetos-cabecalho--skills">
+        <div>
+          <p class="projetos-etiqueta">EM CONSTANTE EVOLUÇÃO</p>
+          <h2 id="projetos-skills-titulo">Minhas skills<span>.</span></h2>
+        </div>
+        <p>Conhecimentos e ferramentas que fazem parte dos meus estudos e projetos.</p>
+      </div>
+      <div class="projetos-skills-grade">
+        <section class="projeto-skill-card" aria-labelledby="skill-dev">
+          <div class="skill-icone"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+          <h3 id="skill-dev">Desenvolvimento</h3>
+          <p>Estruturas, lógica e tecnologias web.</p>
+          <div class="projeto-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span><span>C</span><span>SQL</span></div>
+        </section>
+        <section class="projeto-skill-card" aria-labelledby="skill-tools">
+          <div class="skill-icone"><i class="bi bi-tools" aria-hidden="true"></i></div>
+          <h3 id="skill-tools">Ferramentas</h3>
+          <p>Ambientes usados para criar, versionar e organizar.</p>
+          <div class="projeto-tags"><span>VS Code</span><span>Git</span><span>GitHub</span><span>MySQL</span><span>MySQL Workbench</span></div>
+        </section>
+        <section class="projeto-skill-card" aria-labelledby="skill-design">
+          <div class="skill-icone"><i class="bi bi-palette" aria-hidden="true"></i></div>
+          <h3 id="skill-design">Design e criação</h3>
+          <p>Interfaces, protótipos e experiências visuais.</p>
+          <div class="projeto-tags"><span>Figma</span><span>UI/UX</span><span>Photoshop</span><span>Premiere Pro</span><span>Prototipagem</span></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="projetos-fecho projetos-shell" aria-label="Mais projetos">
+    <div>
+      <p class="projetos-etiqueta">CONTINUA...</p>
+      <h2>Ainda tem muita coisa por vir<span>.</span></h2>
+      <p>Esses são alguns dos primeiros passos. Outros projetos estão tomando forma.</p>
+    </div>
+    <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" class="projeto-botao projeto-botao--principal">
+      <i class="bi bi-github" aria-hidden="true"></i> Meu GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+    </a>
+  </section>
+</main>
+
+<footer class="rodape">
+
+  <a href="#inicio"
+   class="rodape-topo"
+   aria-label="Voltar ao início">
+
+    <img src="imagens/seta.png"
+         alt=""
+         class="icone-topo">
+
+</a>
+
+    <div class="container">
+
+        <div class="rodape-barra" style="justify-content: center; text-align: center;">
+            <p class="copyright">© 2026 Ricardo Henrique. Todos os direitos reservados.</p>
+        </div>
+
+    </div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

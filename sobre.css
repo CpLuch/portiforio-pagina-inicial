@@ -1,0 +1,118 @@
+/* SOBRE MIM — Texto flui ao lado da fotografia e continua pela largura inteira.
+   Navbar e rodapé originais do Modo Off: style.css e modooff.css. */
+
+.pagina-sobre {
+  background: #202326;
+  color: #f5f5f3;
+  font-family: 'Figtree', Arial, sans-serif;
+}
+.pagina-sobre .sobre-shell {
+  width: calc(100% - 40px);
+  max-width: 1160px;
+  margin-inline: auto;
+}
+.pagina-sobre .sobre-main { min-height: 72vh; }
+.pagina-sobre .sobre-secao {
+  padding-block: clamp(64px, 7vw, 100px) clamp(112px, 11vw, 160px);
+}
+
+/* Em vez de duas colunas fixas, usa float para que os parágrafos
+   se alinhem à direita da foto e ocupem TODA a largura abaixo dela.
+   flow-root contém o float sem afetar o restante da página. */
+.pagina-sobre .sobre-grid {
+  display: flow-root;
+}
+.pagina-sobre .sobre-coluna-foto {
+  float: left;
+  width: 46%;
+  margin: 0 clamp(38px, 5.2vw, 78px) 28px 0;
+  padding: 0;
+  position: static;
+}
+.pagina-sobre .sobre-foto {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  object-fit: contain;
+  object-position: center top;
+  box-shadow: none;
+  transform: none;
+  animation: none;
+  transition: none;
+  filter: drop-shadow(-13px -12px 27px rgba(255,255,255,.17))
+          drop-shadow(18px 24px 35px rgba(128,78,43,.36));
+}
+
+/* A coluna de texto não tem mais largura fixa; isso permite que
+   o texto se espalhe pela página ao passar do fim da fotografia. */
+.pagina-sobre .sobre-coluna-texto {
+  display: block;
+  min-width: 0;
+  max-width: none;
+}
+.pagina-sobre .sobre-etiqueta {
+  margin: 2px 0 14px;
+  color: #aeb7bb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .17em;
+}
+.pagina-sobre .sobre-titulo {
+  margin: 0 0 clamp(26px, 3.8vw, 48px);
+  font-size: clamp(48px, 6.8vw, 82px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -.072em;
+  overflow-wrap: anywhere;
+}
+.pagina-sobre .sobre-titulo span { color: #9aa3a9; }
+.pagina-sobre .sobre-historia { max-width: none; }
+.pagina-sobre .sobre-historia p {
+  margin: 0 0 21px;
+  color: rgba(245,245,243,.77);
+  font-size: clamp(15px, 1.35vw, 17px);
+  line-height: 1.85;
+}
+.pagina-sobre .sobre-historia .sobre-abertura {
+  color: #f5f5f3;
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.65;
+  font-weight: 500;
+}
+.pagina-sobre .sobre-historia strong {
+  color: #fff;
+  font-weight: 800;
+}
+.pagina-sobre .sobre-historia .sobre-destaque {
+  margin-block: 32px;
+  padding-left: 20px;
+  border-left: 3px solid rgba(206,163,130,.74);
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(18px, 1.85vw, 22px);
+  line-height: 1.6;
+}
+
+/* Celular / tablet: foto inteira acima e texto abaixo, sem cortes. */
+@media (max-width: 860px) {
+  .pagina-sobre .sobre-coluna-foto {
+    float: none;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto 45px;
+  }
+  .pagina-sobre .sobre-foto { width: 100%; height: auto; }
+}
+@media (max-width: 640px) {
+  .pagina-sobre .sobre-shell { width: calc(100% - 32px); }
+  .pagina-sobre .sobre-secao { padding-top: 56px; padding-bottom: 110px; }
+  .pagina-sobre .sobre-coluna-foto { margin-bottom: 36px; }
+  .pagina-sobre .sobre-historia p { line-height: 1.75; margin-bottom: 18px; }
+  .pagina-sobre .sobre-historia .sobre-destaque { padding-left: 14px; }
+}

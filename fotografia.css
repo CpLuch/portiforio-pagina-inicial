@@ -1,0 +1,158 @@
+/* GALERIA DE FOTOGRAFIA - SOMENTE ÁREA CENTRAL */
+/* Cabeçalho e rodapé permanecem com o style.css + modooff.css do site original. */
+
+.pagina-fotografia { background: #202326; color: #F5F5F3; font-family: 'Figtree', system-ui, sans-serif; }
+.pagina-fotografia a { color: inherit; text-decoration: none; }
+.pagina-fotografia .fotos-shell { width: calc(100% - 40px); max-width: 1040px; margin-inline: auto; }
+.pagina-fotografia .fotos-hero { padding: clamp(56px, 7vw, 92px) 0 clamp(28px, 4.5vw, 52px); }
+.pagina-fotografia .fotos-eyebrow { margin: 0 0 16px; color: #abb1b3; font-size: 13px; font-weight: 700; letter-spacing: .17em; }
+.pagina-fotografia .fotos-titulo { margin: 0 0 23px; font-size: clamp(43px, 7.4vw, 82px); font-weight: 800; letter-spacing: -.072em; line-height: 1.1; }
+.pagina-fotografia .fotos-titulo span { color: #98a0a5; }
+.pagina-fotografia .fotos-subtitulo {
+  margin: 16px 0 0; max-width: 720px;
+  color: rgba(245,245,243,.72); font-size: 18px; line-height: 1.65;
+}
+.pagina-fotografia .fotos-titulo { overflow-wrap: break-word; }
+.pagina-fotografia .fotos-lead { font-size: clamp(23px, 2.8vw, 32px); font-weight: 600; letter-spacing: -.03em; line-height: 1.3; margin: 0 0 18px; }
+.pagina-fotografia .fotos-intro { max-width: 690px; font-size: 18px; line-height: 1.75; color: rgba(245,245,243,.7); margin: 0; }
+.pagina-fotografia .fotos-divisoria { border-top: 1px solid rgba(255,255,255,.09); box-shadow: 0 6px 16px rgba(255,255,255,.04); }
+.pagina-fotografia .fotos-section { padding: 20px 0 100px; }
+.pagina-fotografia .fotos-section-head { margin-bottom: 28px; }
+.pagina-fotografia .fotos-section-head h2 { font-weight: 800; font-size: 29px; letter-spacing: -.04em; margin: 0 0 8px; }
+.pagina-fotografia .fotos-section-head p { color: rgba(245,245,243,.7); margin: 0; font-size: 16px; }
+
+/* TRÊS FOTOGRAFIAS DISPOSTAS EM LEQUE */
+.fotos-albuns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; row-gap: 28px; }
+.fotos-cartao { display: flex; min-width: 0; flex-direction: column; align-items: center; padding: 14px 10px 28px; border: 1px solid transparent; border-radius: 10px; transition: border-color .3s ease, background .3s ease; text-align: center; }
+.fotos-cartao:hover, .fotos-cartao:focus-visible { background: rgba(255,255,255,.025); border-color: rgba(245,245,243,.11); outline: none; }
+.fotos-cartao .fotos-leque { display: block; position: relative; width: 100%; max-width: 305px; height: 263px; }
+.fotos-leque img { display: block; position: absolute; left: 50%; top: 21px; width: 166px; height: 216px; object-fit: cover; object-position: center; border: 3px solid #d5d4d0; border-radius: 3px; background: #33383b; box-shadow: 0 8px 28px rgba(0,0,0,.5); transform-origin: 50% 85%; transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; }
+.fotos-leque img:nth-child(1) { z-index: 1; transform: translateX(calc(-50% - 24px)) translateY(9px) rotate(-11deg); }
+.fotos-leque img:nth-child(2) { z-index: 2; transform: translateX(calc(-50% + 28px)) translateY(8px) rotate(11deg); }
+.fotos-leque img:nth-child(3) { z-index: 3; transform: translateX(-50%) rotate(0deg); }
+@media (hover:hover) and (pointer:fine) {
+  .fotos-cartao:hover .fotos-leque img:nth-child(1) { transform: translateX(calc(-50% - 54px)) translateY(4px) rotate(-17deg); }
+  .fotos-cartao:hover .fotos-leque img:nth-child(2) { transform: translateX(calc(-50% + 56px)) translateY(3px) rotate(17deg); }
+  .fotos-cartao:hover .fotos-leque img:nth-child(3) { transform: translateX(-50%) translateY(-9px); box-shadow: 0 16px 38px rgba(0,0,0,.6); }
+}
+.fotos-nome { font-weight: 700; font-size: 22px; letter-spacing: -.03em; line-height: 1.3; margin: 0 0 4px; color: #F5F5F3; }
+.fotos-contagem { color: rgba(245,245,243,.52); font-size: 13px; letter-spacing: .02em; }
+
+/* ALBUM: miniaturas 4:5, fotos originais completas na lightbox */
+.fotos-album-main { min-height: 66vh; }
+.fotos-album-hero { padding: 70px 0 56px; }
+.fotos-voltar { display: inline-flex; gap: 9px; align-items: center; margin: 0 0 32px; color: rgba(245,245,243,.65)!important; font-size: 15px; transition: color .2s ease; }
+.fotos-voltar:hover, .fotos-voltar:focus-visible { color: #fff!important; }
+.fotos-album-hero .fotos-eyebrow { margin-bottom: 8px; }
+.fotos-album-titulo { margin: 0; font-size: clamp(38px, 6vw, 70px); font-weight: 800; letter-spacing: -.06em; line-height: 1.15; overflow-wrap: anywhere; }
+.fotos-album-section { padding: 54px 0 120px; }
+.fotos-grade { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+.fotos-foto { display: block; width: 100%; aspect-ratio: 4/5; overflow: hidden; border: 0; padding: 0; background: #2b2e32; cursor: zoom-in; }
+.fotos-foto img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .4s ease, filter .4s ease; }
+@media (hover:hover) and (pointer:fine) { .fotos-foto:hover img { transform: scale(1.045); filter: brightness(1.09); } }
+.fotos-foto:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.fotos-mensagem { margin-top: 16px; color: #dedede; }
+.fotos-mensagem a { text-decoration: underline!important; }
+
+/* OVERLAY TELA CHEIA */
+.fotos-lightbox[hidden] { display: none!important; }
+.fotos-lightbox { position: fixed; z-index: 10000; inset: 0; display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px; place-items: center; background: rgba(10,11,13,.97); padding: 64px 20px; }
+.fotos-lb-imagem { grid-column: 2; grid-row: 1; display: block; max-width: 100%; max-height: calc(100dvh - 120px); width: auto; height: auto; object-fit: contain; box-shadow: 0 10px 45px rgba(0,0,0,.38); }
+.fotos-lb-navegar, .fotos-lb-fechar { appearance: none; border: 0; background: rgba(255,255,255,.06); color: #fff; cursor: pointer; display: grid; place-items: center; line-height: 1; transition: background .2s; }
+.fotos-lb-navegar:hover, .fotos-lb-fechar:hover { background: rgba(255,255,255,.16); }
+.fotos-lb-navegar { font-size: 42px; width: 48px; height: 64px; border-radius: 6px; z-index: 1; grid-row: 1; }
+.fotos-lb-prev { grid-column: 1; } .fotos-lb-next { grid-column: 3; }
+.fotos-lb-fechar { position: absolute; top: 18px; right: 22px; z-index: 2; width: 42px; height: 42px; font-size: 30px; border-radius: 6px; }
+.fotos-lb-contador { position: absolute; bottom: 19px; left: 50%; transform: translateX(-50%); color: #aaa; font-size: 13px; letter-spacing: .06em; }
+
+/* ENCERRAMENTO COM O MESMO ESTILO DE MODO OFF */
+.fotos-encerramento { border-top: 1px solid rgba(245,245,243,.13); padding: 55px 0 72px; }
+.fotos-encerramento p { font-size: 23px; font-weight: 600; margin: 0 0 16px; letter-spacing: -.03em; }
+.pagina-fotografia .fotos-botao-contato {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 13px 22px; border: 1px solid #F5F5F3; border-radius: 5px;
+  background: #F5F5F3; color: #202326; text-decoration: none;
+  font-size: 15px; font-weight: 700; line-height: 1.4;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.pagina-fotografia .fotos-botao-contato:hover {
+  background: transparent; color: #F5F5F3; transform: translateY(-2px);
+}
+.pagina-fotografia .fotos-botao-contato:focus-visible {
+  outline: 3px solid #F5F5F3; outline-offset: 4px;
+}
+
+@media (max-width: 920px) {
+  .fotos-albuns { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .fotos-grade { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .pagina-fotografia .fotos-shell { width: calc(100% - 32px); }
+  .pagina-fotografia .fotos-hero { padding: 56px 0 28px; }
+  .pagina-fotografia .fotos-eyebrow { font-size: 11px; }
+  .pagina-fotografia .fotos-titulo { font-size: clamp(40px, 9vw, 60px); letter-spacing: -.07em; }
+  .pagina-fotografia .fotos-subtitulo { font-size: 15px; margin-top: 14px; line-height: 1.7; }
+  .pagina-fotografia .fotos-lead { font-size: 22px; }
+  .pagina-fotografia .fotos-intro { font-size: 15px; line-height: 1.7; }
+  .pagina-fotografia .fotos-section { padding: 10px 0 75px; }
+  .pagina-fotografia .fotos-section-head h2 { font-size: 25px; }
+  .pagina-fotografia .fotos-section-head p { font-size: 15px; }
+  .fotos-albuns { grid-template-columns: 1fr; gap: 10px; }
+  .fotos-cartao { padding: 8px 10px 16px; }
+  .fotos-cartao .fotos-leque { height: 246px; }
+  .fotos-leque img { top: 17px; width: 155px; height: 202px; }
+  .fotos-nome { font-size: 21px; }
+  .fotos-album-hero { padding: 45px 0 36px; }
+  .fotos-album-section { padding: 30px 0 80px; }
+  .fotos-grade { gap: 10px; }
+  .fotos-lightbox { grid-template-columns: 38px minmax(0, 1fr) 38px; padding: 75px 6px; }
+  .fotos-lb-navegar { width: 34px; height: 54px; font-size: 33px; background: rgba(255,255,255,.04); }
+  .fotos-lb-imagem { max-height: calc(100dvh - 145px); }
+  .fotos-encerramento { padding: 45px 0 60px; }
+}
+@media (max-width: 370px) {
+  .fotos-grade { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fotos-leque img, .fotos-cartao, .fotos-foto img, .fotos-lb-navegar, .fotos-lb-fechar { transition: none!important; }
+}
+
+/* AJUSTES EXCLUSIVOS DA PÁGINA INTERNA DO ÁLBUM */
+.pagina-album .fotos-botao-voltar {
+  margin-bottom: 32px;
+}
+.pagina-album .fotos-album-hero {
+  padding-bottom: 30px;
+}
+.pagina-album .fotos-album-section {
+  padding-top: 18px;
+}
+@media (max-width: 640px) {
+  .pagina-album .fotos-album-hero { padding-bottom: 22px; }
+  .pagina-album .fotos-album-section { padding-top: 16px; }
+}
+
+
+/* =============================================
+   BOTÕES RESPONSIVOS: FOTOGRAFIA E ÁLBUM
+   O texto, as margens internas e a distância
+   entre texto e ícone acompanham a tela.
+   ============================================= */
+.pagina-fotografia .fotos-botao-contato {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+  font-size: clamp(13px, 1.4vw, 15px);
+  padding: clamp(10px, 1.2vw, 13px) clamp(13px, 2vw, 22px);
+  gap: clamp(7px, 1vw, 12px);
+}
+
+@media (max-width: 380px) {
+  .pagina-fotografia .fotos-botao-contato {
+    font-size: 13px;
+    padding: 9px 12px;
+    gap: 7px;
+  }
+}

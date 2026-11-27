@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#202326">
+  <title>Meus Jogos Favoritos | Modo Off</title>
+  <meta name="description" content="Jogos que marcaram minha história: franquias favoritas, sinopses sem spoilers e avaliações pessoais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Reutiliza o cabeçalho e o rodapé do seu site atual -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modooff.css">
+  <!-- Somente o visual da página de jogos -->
+  <link rel="stylesheet" href="jogos.css">
+</head>
+<body class="pagina-offline pagina-jogos" id="inicio">
+<nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegação principal">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="Ir para a página inicial">
+            <img src="imagens/logo.png" alt="Logo Ricardo Henrique" class="logo-img">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                aria-expanded="false" aria-label="Abrir menu de navegação">
+            <span class="linha"></span>
+            <span class="linha"></span>
+            <span class="linha"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="modooff.html">Modo Off</a></li>
+                <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="fotografia.html">Fotografias</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            </ul>
+
+   <!-- Ícones sociais no desktop -->
+            <div class="menu-redes-desktop d-none d-lg-flex" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- Os mesmos ícones no menu recolhido -->
+            <div class="menu-redes d-lg-none" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<main id="conteudo" class="jogos-main">
+  <section class="jogos-intro jogos-shell" aria-labelledby="jogos-titulo">
+    <a class="jogos-voltar" href="modooff.html"><span aria-hidden="true">←</span> Voltar ao Modo Off</a>
+    <h1 id="jogos-titulo">Meus jogos favoritos<span class="jogos-ponto"></span></h1>
+    <p class="jogos-subtitulo">Alguns dos jogos que marcaram minha história. Explore as franquias em leque, descubra cada aventura e confira minhas notas pessoais.</p>
+    <div class="jogos-audio-container" id="jogos-audio-container" hidden>
+      <button class="jogos-audio-toggle" id="jogos-audio-toggle" type="button" aria-pressed="false"><i class="bi bi-volume-mute" aria-hidden="true"></i> Ativar trilhas sonoras</button>
+      <p class="jogos-audio-msg" id="jogos-audio-msg" role="status" aria-live="polite"></p>
+    </div>
+    <p class="jogos-audio-msg jogos-audio-desktop-msg" id="jogos-audio-desktop-msg" role="status" aria-live="polite" hidden></p>
+  </section>
+  <section class="jogos-secao jogos-shell" aria-labelledby="jogos-franquias-titulo">
+    <div class="jogos-cabecalho-secao">
+      <h2 id="jogos-franquias-titulo">Franquias</h2>
+      <p>Clique para abrir!</p>
+    </div>
+    <div id="jogos-franquias" class="jogos-franquias"></div>
+  </section>
+  <section class="jogos-secao jogos-avulsos-secao jogos-shell" aria-labelledby="jogos-avulsos-titulo">
+    <div class="jogos-cabecalho-secao">
+      <h2 id="jogos-avulsos-titulo">Jogos avulsos</h2>
+      <p>Outros títulos que também merecem um lugar especial.</p>
+    </div>
+    <div id="jogos-avulsos" class="jogos-avulsos"></div>
+  </section>
+  <p class="jogos-erro jogos-shell" id="jogos-erro" hidden>Não foi possível carregar a lista. Confira se jogos-dados.js está na mesma pasta do jogos.html.</p>
+</main>
+<!-- Janela sobreposta dos jogos da franquia: permanece fechada até clicar no leque. -->
+<div class="jogos-modal" id="jogos-modal" hidden>
+  <section class="jogos-modal-painel" role="dialog" aria-modal="true" aria-labelledby="jogos-modal-titulo" aria-describedby="jogos-modal-contador" tabindex="-1">
+    <header class="jogos-modal-cabecalho">
+      <div class="jogos-modal-identificacao">
+        <p class="jogos-modal-etiqueta">MEUS JOGOS FAVORITOS / FRANQUIA</p>
+        <h2 id="jogos-modal-titulo"></h2>
+        <p id="jogos-modal-contador"></p>
+      </div>
+      <button class="jogos-modal-fechar" id="jogos-modal-fechar" type="button" aria-label="Fechar jogos da franquia">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+    </header>
+    <div class="jogos-modal-lista" id="jogos-modal-lista"></div>
+  </section>
+</div>
+
+<footer class="rodape">
+
+  <a href="#inicio"
+   class="rodape-topo"
+   aria-label="Voltar ao início">
+
+    <img src="imagens/seta.png"
+         alt=""
+         class="icone-topo">
+
+</a>
+
+    <div class="container">
+
+        <div class="rodape-barra" style="justify-content: center; text-align: center;">
+            <p class="copyright">© 2026 Ricardo Henrique. Todos os direitos reservados.</p>
+        </div>
+
+    </div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="jogos-dados.js" defer></script>
+<script src="jogos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* FILME — Visual específico da página. O menu e o rodapé seguem o index.html via style.css. */
+.pagina-filme {
+  --filme-bg: #202326;
+  --filme-ink: #f5f5f3;
+  --filme-muted: #b7babd;
+  background: var(--filme-bg);
+  color: var(--filme-ink);
+  font-family: 'Figtree', system-ui, sans-serif;
+  min-width: 320px;
+}
+.pagina-filme .filme-shell {
+  max-width: 1040px;
+  width: calc(100% - 40px);
+  margin-inline: auto;
+}
+.pagina-filme .filme-main { min-height: 66vh; }
+.pagina-filme .filme-voltar {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: clamp(10px, 1.2vw, 13px) clamp(13px, 2vw, 22px);
+  border: 1px solid #f5f5f3;
+  border-radius: 5px;
+  font-family: 'Figtree', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(13px, 1.4vw, 15px);
+  line-height: 1.4;
+  max-width: 100%;
+  white-space: normal;
+  text-decoration: none;
+  background: #f5f5f3;
+  color: #202326;
+  transition: background .2s, transform .2s, color .2s;
+  margin-bottom: clamp(32px, 5.5vw, 61px);
+}
+.pagina-filme .filme-voltar:hover { background: transparent; color: #f5f5f3; transform: translateY(-2px); }
+.pagina-filme .filme-voltar:focus-visible { outline: 3px solid #f5f5f3; outline-offset: 4px; }
+.pagina-filme .filme-intro { padding-top: clamp(56px, 7vw, 92px); padding-bottom: clamp(28px, 4.5vw, 52px); }
+.pagina-filme .filme-etiqueta { font-size: 12px; color: #b2b8bd; letter-spacing: .17em; font-weight: 800; margin: 0 0 14px; }
+.pagina-filme .filme-intro h1 { font-size: clamp(43px, 7.4vw, 82px); font-weight: 800; letter-spacing: -.072em; line-height: 1.1; max-width: 980px; margin: 0 0 22px; overflow-wrap: break-word; }
+.pagina-filme .filme-ponto { color: #9aa3a9; }
+.pagina-filme .filme-subtitulo { font-size: clamp(16px, 1.9vw, 19px); line-height: 1.75; color: rgba(245,245,243,.73); max-width: 800px; margin: 0; }
+.pagina-filme .filme-secao { padding-top: 20px; padding-bottom: clamp(56px, 7vw, 90px); }
+.pagina-filme .filme-cabecalho-secao { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 30px; }
+.pagina-filme .filme-cabecalho-secao h2 { font-size: clamp(29px, 3.8vw, 42px); font-weight: 800; letter-spacing: -.045em; margin: 0 0 6px; }
+.pagina-filme .filme-cabecalho-secao p { color: var(--filme-muted); font-size: 15px; margin: 0; }
+.pagina-filme .filme-contagem { color: #aeb7bc; letter-spacing: .13em; font-size: 11px; font-weight: 800; white-space: nowrap; padding-bottom: 8px; }
+
+/* Três categorias com leques animados, mesmo comportamento visual de Jogos */
+.pagina-filme .filme-colecoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 20px; align-items: stretch; }
+.pagina-filme .filme-grupo { display: flex; min-width: 0; border: 1px solid rgba(245,245,243,.08); border-radius: 9px; transition: background .24s, border .24s, transform .24s; }
+.pagina-filme .filme-grupo:hover, .pagina-filme .filme-grupo:focus-within { background: rgba(245,245,243,.035); border-color: rgba(245,245,243,.22); transform: translateY(-3px); }
+.pagina-filme .filme-grupo-trigger { display: flex; flex-direction: column; align-items: center; width: 100%; background: transparent; border: 0; color: inherit; cursor: pointer; padding: 22px 12px 25px; border-radius: 8px; text-align: center; font-family: inherit; }
+.pagina-filme .filme-grupo-trigger:focus-visible { outline: 2px solid #f5f5f3; outline-offset: 2px; }
+.pagina-filme .filme-leque { position: relative; display: block; width: 100%; max-width: 270px; height: 230px; flex: none; }
+.pagina-filme .filme-leque img { position: absolute; top: 14px; left: 50%; width: 136px; height: 199px; object-fit: cover; object-position: center top; background: #35393c; border: 2px solid rgba(245,245,243,.76); border-radius: 3px; box-shadow: 0 12px 26px rgba(0,0,0,.56); transform-origin: 50% 85%; transition: transform .42s cubic-bezier(.25,.9,.3,1); }
+.pagina-filme .filme-leque img:nth-child(1) { z-index: 1; transform: translateX(calc(-50% - 30px)) translateY(7px) rotate(-12deg); }
+.pagina-filme .filme-leque img:nth-child(2) { z-index: 2; transform: translateX(calc(-50% + 32px)) translateY(7px) rotate(12deg); }
+.pagina-filme .filme-leque img:nth-child(3) { z-index: 3; transform: translateX(-50%) translateY(-1px); }
+@media (hover: hover) and (pointer: fine) {
+  .pagina-filme .filme-grupo:hover .filme-leque img:nth-child(1), .pagina-filme .filme-grupo-trigger:focus-visible .filme-leque img:nth-child(1) { transform: translateX(calc(-50% - 53px)) translateY(7px) rotate(-19deg); }
+  .pagina-filme .filme-grupo:hover .filme-leque img:nth-child(2), .pagina-filme .filme-grupo-trigger:focus-visible .filme-leque img:nth-child(2) { transform: translateX(calc(-50% + 55px)) translateY(6px) rotate(19deg); }
+  .pagina-filme .filme-grupo:hover .filme-leque img:nth-child(3), .pagina-filme .filme-grupo-trigger:focus-visible .filme-leque img:nth-child(3) { transform: translateX(-50%) translateY(-13px); }
+}
+.pagina-filme .filme-grupo-nome { font-size: clamp(21px, 2.3vw, 25px); font-weight: 800; line-height: 1.25; letter-spacing: -.04em; display: block; }
+.pagina-filme .filme-grupo-contador { color: var(--filme-muted); font-size: 13px; margin-top: 7px; display: block; }
+.pagina-filme .filme-grupo-resumo { display: block; max-width: 240px; margin: 9px auto 0; color: #bbc1c6; font-size: 13px; line-height: 1.5; }
+.pagina-filme .filme-grupo-abrir { margin-top: auto; padding-top: 16px; display: inline-flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 650; color: rgba(245,245,243,.85); }
+.pagina-filme .filme-grupo-abrir i { transition: transform .25s ease; }
+.pagina-filme .filme-grupo:hover .filme-grupo-abrir i { transform: translate(2px,-2px); }
+
+/* Pôster, ano e sinopse, sem avaliações. */
+.pagina-filme .filme-card { display: grid; grid-template-columns: clamp(125px, 18vw, 190px) minmax(0, 1fr); gap: clamp(16px, 3vw, 32px); padding: clamp(13px, 2.2vw, 21px); background: #2a2e32; border: 1px solid rgba(245,245,243,.08); border-radius: 7px; align-items: stretch; }
+.pagina-filme .filme-capa { width: 100%; aspect-ratio: 2/3; background: #34383b; border-radius: 3px; overflow: hidden; align-self: start; }
+.pagina-filme .filme-capa img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.pagina-filme .filme-sem-capa { display: grid; place-items: center; width: 100%; height: 100%; font-size: 14px; color: var(--filme-ink); padding: 15px; text-align: center; }
+.pagina-filme .filme-card-dados { min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.pagina-filme .filme-card-dados h3 { font-size: clamp(20px, 2.65vw, 28px); line-height: 1.19; letter-spacing: -.03em; font-weight: 750; margin: 2px 0 9px; overflow-wrap: break-word; }
+.pagina-filme .filme-card-ano { color: #b7bec4; font-size: 13px; font-weight: 600; margin: 0 0 14px; }
+.pagina-filme .filme-card-sinopse { color: #d2d3d5; font-size: clamp(14px, 1.5vw, 16px); line-height: 1.65; margin: 0; }
+.pagina-filme .filme-erro { color: var(--filme-ink); padding: 20px 0; }
+
+/* Pop-up de categoria — fundo escurecido, como o de Jogos. */
+body.pagina-filme.filme-modal-ativo { overflow: hidden; }
+.pagina-filme .filme-modal[hidden] { display: none !important; }
+.pagina-filme .filme-modal { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: clamp(12px, 3vw, 30px); background: rgba(4,6,9,.87); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); animation: filme-sombra-in .22s ease-out both; }
+.pagina-filme .filme-modal-painel { width: min(100%, 920px); max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); display: flex; flex-direction: column; min-height: 0; background: #23272b; color: #f5f5f3; border: 1px solid rgba(245,245,243,.18); border-radius: 14px; box-shadow: 0 35px 100px rgba(0,0,0,.6); overflow: hidden; animation: filme-painel-in .25s cubic-bezier(.2,.75,.2,1) both; }
+.pagina-filme .filme-modal-painel:focus { outline: none; }
+.pagina-filme .filme-modal-cabecalho { flex: none; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: clamp(20px, 3.3vw, 32px) clamp(18px, 3.3vw, 35px) clamp(16px, 2.1vw, 22px); border-bottom: 1px solid rgba(245,245,243,.10); }
+.pagina-filme .filme-modal-identificacao { min-width: 0; }
+.pagina-filme .filme-modal-etiqueta { font-size: 11px; color: #bac1c5; font-weight: 800; letter-spacing: .15em; margin: 0 0 8px; }
+.pagina-filme .filme-modal-cabecalho h2 { font-size: clamp(26px, 4.5vw, 39px); font-weight: 800; letter-spacing: -.045em; line-height: 1.2; margin: 0 0 5px; overflow-wrap: anywhere; }
+.pagina-filme .filme-modal-cabecalho #filme-modal-contagem { color: #aeb6bc; font-size: 14px; margin: 0; }
+.pagina-filme .filme-modal-fechar { display: grid; place-items: center; width: clamp(37px, 4vw, 44px); height: clamp(37px, 4vw, 44px); flex: none; border: 1px solid rgba(245,245,243,.22); border-radius: 50%; background: rgba(245,245,243,.08); color: #f5f5f3; font-size: 19px; cursor: pointer; transition: background .2s, transform .2s; }
+.pagina-filme .filme-modal-fechar:hover { background: rgba(245,245,243,.18); transform: rotate(90deg); }
+.pagina-filme .filme-modal-fechar:focus-visible { outline: 2px solid #f5f5f3; outline-offset: 3px; }
+.pagina-filme .filme-modal-lista { min-height: 0; overflow-y: auto; overscroll-behavior: contain; overflow-anchor: none; scroll-behavior: auto; padding: clamp(13px, 2.7vw, 26px) clamp(13px, 3.1vw, 32px) clamp(22px, 3vw, 32px); display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 2vw, 18px); scrollbar-color: #767e83 #23272b; scrollbar-width: thin; }
+.pagina-filme .filme-modal-lista .filme-card { grid-template-columns: clamp(125px, 18vw, 180px) minmax(0, 1fr); }
+@keyframes filme-sombra-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes filme-painel-in { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 880px) {
+  .pagina-filme .filme-colecoes { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 620px) {
+  .pagina-filme .filme-shell { width: calc(100% - 32px); }
+  .pagina-filme .filme-colecoes { grid-template-columns: 1fr; gap: 12px; }
+  .pagina-filme .filme-cabecalho-secao { display: block; }
+  .pagina-filme .filme-contagem { display: inline-block; padding: 12px 0 0; }
+  .pagina-filme .filme-grupo-trigger { padding: 16px 12px 22px; }
+  .pagina-filme .filme-leque { height: 218px; }
+  .pagina-filme .filme-leque img { height: 186px; width: 126px; }
+  .pagina-filme .filme-modal { padding: 10px; }
+  .pagina-filme .filme-modal-painel { max-height: calc(100vh - 20px); max-height: calc(100dvh - 20px); border-radius: 10px; }
+  .pagina-filme .filme-modal-cabecalho { gap: 10px; padding: 20px 17px 16px; }
+  .pagina-filme .filme-modal-lista { padding: 12px; gap: 12px; }
+  .pagina-filme .filme-modal-lista .filme-card { grid-template-columns: clamp(88px, 27vw, 128px) minmax(0, 1fr); padding: 12px; gap: 12px; }
+  .pagina-filme .filme-modal-lista .filme-card-dados h3 { font-size: clamp(16px, 4.2vw, 20px); }
+  .pagina-filme .filme-modal-lista .filme-card-sinopse { font-size: 13px; line-height: 1.53; }
+}
+@media (max-width: 370px) {
+  .pagina-filme .filme-modal-lista .filme-card { grid-template-columns: 83px minmax(0,1fr); gap: 10px; padding: 9px; }
+  .pagina-filme .filme-modal-lista .filme-card-dados h3 { font-size: 16px; }
+  .pagina-filme .filme-modal-lista .filme-card-sinopse { font-size: 12px; }
+  .pagina-filme .filme-modal-fechar { width: 36px; height: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pagina-filme .filme-leque img, .pagina-filme .filme-grupo, .pagina-filme .filme-voltar, .pagina-filme .filme-grupo-abrir i, .pagina-filme .filme-modal-fechar { transition: none !important; }
+  .pagina-filme .filme-modal, .pagina-filme .filme-modal-painel { animation: none !important; }
+}

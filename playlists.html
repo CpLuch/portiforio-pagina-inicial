@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#202326" name="theme-color"/>
+<meta content="Playlists favoritas de Ricardo Henrique — Modo Off." name="description"/>
+<title>Playlists | Ricardo Henrique</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<!-- Mesmo CSS de navegação e rodapé usado no index.html -->
+<link href="style.css" rel="stylesheet"/>
+<!-- CSS exclusivo da página de playlists -->
+<link href="playlists.css" rel="stylesheet"/>
+<script defer="" src="playlists.js"></script></head>
+<body class="pagina-playlists" id="inicio"><nav aria-label="Navegação principal" class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a aria-label="Ir para a página inicial" class="navbar-brand" href="index.html">
+<img alt="Logo Ricardo Henrique" class="logo-img" src="imagens/logo.png"/>
+</a>
+<button aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação" class="navbar-toggler" data-bs-target="#menuPrincipal" data-bs-toggle="collapse" type="button">
+<span class="linha"></span>
+<span class="linha"></span>
+<span class="linha"></span>
+</button>
+<div class="collapse navbar-collapse" id="menuPrincipal">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="modooff.html">Modo Off</a></li>
+<li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+<li class="nav-item"><a class="nav-link" href="fotografia.html">Fotografias</a></li>
+<li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+<li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+</ul>
+   <!-- Ícones sociais no desktop -->
+            <div class="menu-redes-desktop d-none d-lg-flex" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- Os mesmos ícones no menu recolhido -->
+            <div class="menu-redes d-lg-none" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+</a>
+</div>
+</div>
+</div>
+</nav>
+<nav class="topbar" aria-label="Voltar ao Modo Off">
+<a class="jogos-voltar" href="modooff.html"><span aria-hidden="true">←</span> Voltar ao Modo Off</a>
+<span class="small-label">MODO OFF / MÚSICAS</span>
+</nav>
+<main class="playlists-container">
+<header class="playlists-hero">
+<div>
+<p class="small-label">MINHA TRILHA SONORA</p>
+<h1>Playlists<span>.</span></h1>
+</div>
+<p class="hero-description">
+        Uma coleção de sons para cada universo.
+        Escolha uma playlist e explore.
+      </p>
+</header>
+<section>
+<div class="section-header">
+<h2>Escolha uma coleção</h2>
+<span>05 PLAYLISTS</span>
+</div>
+<div class="cards" id="cards"></div>
+</section>
+
+</main><footer class="rodape">
+<a aria-label="Voltar ao início" class="rodape-topo" href="#inicio">
+<img alt="" class="icone-topo" src="imagens/seta.png"/>
+</a>
+<div class="container">
+<div class="rodape-barra" style="justify-content: center; text-align: center;">
+<p class="copyright">© 2026 Ricardo Henrique. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<div class="playlists-modal" hidden="" id="modal">
+<div class="playlists-overlay" id="overlay"></div>
+<section aria-labelledby="modal-title" aria-modal="true" class="playlists-modal-content" id="dialog" role="dialog" tabindex="-1">
+<div class="playlists-modal-header">
+<div>
+<span class="small-label" id="modal-number"></span>
+<h2 id="modal-title"></h2>
+</div>
+<button aria-label="Fechar" class="playlists-close" id="close">×</button>
+</div>
+<p class="playlists-description" id="modal-description"></p>
+<div class="playlists-player" id="player-container">
+<iframe allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen="" id="youtube-player" title="Reprodutor do YouTube">
+</iframe>
+</div>
+<a class="youtube-button" id="youtube-link" rel="noopener noreferrer" target="_blank">
+        Abrir no YouTube Music ↗
+      </a>
+<div class="track-message">
+<div class="track-icon">♫</div>
+<div>
+<strong>Suas músicas em um só lugar</strong>
+<p>
+            Aqui vamos adicionar as músicas individuais,
+            com suas capas, artistas e botões de reprodução.
+          </p>
+</div>
+</div>
+</section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body>
+</html>

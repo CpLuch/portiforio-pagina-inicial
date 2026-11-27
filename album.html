@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#202326">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Reutiliza exatamente os estilos do cabeçalho e rodapé do seu site -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="modooff.css">
+<!-- Estilos exclusivos da galeria -->
+<link rel="stylesheet" href="fotografia.css">
+<title>Álbum de fotos | Ricardo Henrique</title>
+<meta name="description" content="Álbum de fotografias de Ricardo Henrique.">
+</head>
+<body class="pagina-offline pagina-fotografia pagina-album" id="topo">
+<nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegação principal">
+  <div class="container">
+    <a class="navbar-brand" href="index.html" aria-label="Página inicial"><img src="imagens/logo.png" alt="Logo Ricardo Henrique" class="logo-img"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação"><span class="linha"></span><span class="linha"></span><span class="linha"></span></button>
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="modooff.html">Modo Off</a></li>
+        <li class="nav-item"><a class="nav-link" href="projetos.html">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+      <div class="menu-redes-desktop d-none d-lg-flex" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+        <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+      </div>
+      <div class="menu-redes d-lg-none" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/luchense/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@luchensetv" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+        <a href="https://github.com/CpLuch" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/Luchense/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+<main id="conteudo" class="fotos-album-main">
+  <section class="fotos-album-hero fotos-shell">
+    <a class="fotos-botao-contato fotos-botao-voltar" href="fotografia.html" aria-label="Voltar para todos os álbuns"><span aria-hidden="true">←</span> Voltar aos álbuns</a>
+    <p class="fotos-eyebrow">GALERIA FOTOGRÁFICA</p>
+    <h1 class="fotos-album-titulo" id="titulo-album">Fotografias</h1>
+  </section>
+  <section class="fotos-shell fotos-album-section" aria-label="Fotografias do álbum">
+    <div class="fotos-grade" id="fotos-grade"></div>
+    <p class="fotos-mensagem" id="fotos-mensagem" hidden>Álbum não encontrado. <a href="fotografia.html">Ver todos os álbuns</a></p>
+  </section>
+</main>
+<!-- Visualizador em tela cheia: mostra a foto inteira, sem recortar -->
+<div class="fotos-lightbox" id="fotos-lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada" aria-hidden="true" tabindex="-1" hidden>
+  <button type="button" class="fotos-lb-fechar" id="fotos-lb-fechar" aria-label="Fechar visualização">×</button>
+  <button type="button" class="fotos-lb-navegar fotos-lb-prev" id="fotos-lb-prev" aria-label="Fotografia anterior">‹</button>
+  <img class="fotos-lb-imagem" id="fotos-lb-imagem" alt="Fotografia ampliada">
+  <button type="button" class="fotos-lb-navegar fotos-lb-next" id="fotos-lb-next" aria-label="Próxima fotografia">›</button>
+  <div class="fotos-lb-contador" id="fotos-lb-contador" aria-live="polite"></div>
+</div>
+<footer class="rodape">
+  <a href="#topo" class="rodape-topo" aria-label="Voltar ao início"><img src="imagens/seta.png" alt="" class="icone-topo"></a>
+  <div class="container"><div class="rodape-barra">
+    <p class="copyright">© 2026 Ricardo Henrique</p>
+    <nav class="rodape-menu" aria-label="Navegação do rodapé">
+      <a href="index.html#trabalhos">Portfólio</a>
+      <a href="sobre.html">Sobre mim</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="fotos-dados.js"></script>
+<script src="fotografia.js"></script>
+<!-- Seu script.js existente cuida da seta do rodapé, sem alterar a animação inicial -->
+<script src="script.js"></script>
+</body>

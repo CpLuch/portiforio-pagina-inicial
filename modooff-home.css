@@ -1,0 +1,117 @@
+/* MODO OFF — Página principal com quatro leques | Isolado do CSS das outras páginas */
+:root { --hub-bg:#202326; --hub-ink:#F5F5F3; --hub-muted:#adb3b8; --hub-rule:rgba(255,255,255,.12) }
+.pagina-offhub { background: var(--hub-bg); color:var(--hub-ink); min-width:320px; font-family:'Figtree',system-ui,sans-serif }
+.pagina-offhub a { text-decoration:none; color:inherit }
+.pagina-offhub .off-shell { max-width:1100px; width:calc(100% - 44px);margin-inline:auto }
+/* Menu igual ao index.html: estilos herdados do style.css. */
+.pagina-offhub .offhub-hero {padding-block:91px 70px;}
+.pagina-offhub .offhub-eyebrow {font-size:11px;letter-spacing:.2em;font-weight:800;color:#bcc1c4;display:flex;align-items:center;gap:11px;margin:0 0 22px}
+.pagina-offhub .offhub-dot {height:7px;width:7px;background:#f5f5f3;border-radius:50%;box-shadow:0 0 0 4px #41464a}
+.pagina-offhub .offhub-eyebrow-count {margin-left:auto;color:#969da1}
+.pagina-offhub h1 {font-size:clamp(60px,10vw,132px);font-weight:800;letter-spacing:-.083em;line-height:1.04;margin:0 0 34px}
+.pagina-offhub h1 span{color:#939ca2}
+.pagina-offhub .offhub-hero-bottom {display:flex;align-items:flex-start;justify-content:space-between;gap:50px; border-top:1px solid var(--hub-rule);padding-top:25px}
+.pagina-offhub .offhub-hero-bottom p:first-child {font-size:clamp(20px,2.4vw,27px);font-weight:650;max-width:440px;line-height:1.3;letter-spacing:-.03em;margin:0}
+.pagina-offhub .offhub-hero-bottom p:last-child {color:#adb4b9;max-width:440px;font-size:15px;line-height:1.65;margin:0}
+.pagina-offhub .offhub-collections {padding-bottom:105px}
+.pagina-offhub .offhub-heading {display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:24px}
+.pagina-offhub .offhub-heading p {font-weight:800;font-size:11px;color:#a6afb4;letter-spacing:.17em;margin:0 0 10px}
+.pagina-offhub .offhub-heading h2 {font-size:clamp(26px,4vw,41px);font-weight:800;letter-spacing:-.05em;margin:0;line-height:1.16}
+.pagina-offhub .offhub-heading h2 span {color:#8b949a}
+.pagina-offhub .offhub-collection-count {font-size:13px;color:#aab1b5;letter-spacing:.13em;font-weight:700;white-space:nowrap}
+.pagina-offhub .offhub-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.pagina-offhub .offhub-card {position:relative;display:flex;flex-direction:column;isolation:isolate;min-width:0;min-height:420px;padding:23px 24px 19px;border:1px solid rgba(255,255,255,.13);border-radius:15px;overflow:hidden;background:#292e31;transition:border-color .2s,transform .25s,box-shadow .25s}
+.pagina-offhub .offhub-card:hover {transform:translateY(-4px);border-color:rgba(255,255,255,.4);box-shadow:0 20px 60px rgba(0,0,0,.21)}
+.pagina-offhub .offhub-card:focus-visible {outline:3px solid #fff;outline-offset:4px}
+.pagina-offhub .offhub-card::before {content:"";inset:0;position:absolute;z-index:-1;pointer-events:none;opacity:.75}
+.pagina-offhub .offhub-card--games::before {background:radial-gradient(circle at 50% 38%,#5e566e 0,transparent 60%),linear-gradient(150deg,#34323e,#202328)}
+.pagina-offhub .offhub-card--screen::before {background:radial-gradient(circle at 50% 40%,#4c6073 0,transparent 55%),linear-gradient(145deg,#293747,#202429)}
+.pagina-offhub .offhub-card--music::before {background:radial-gradient(circle at 55% 44%,#634d69 0,transparent 65%),linear-gradient(145deg,#36303c,#222329)}
+.pagina-offhub .offhub-card--travel::before {background:radial-gradient(circle at 50% 40%,#496b64 0,transparent 65%),linear-gradient(145deg,#253a39,#22292a)}
+.pagina-offhub .offhub-card-top {display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pagina-offhub .offhub-card-number {font-size:10px;font-weight:800;letter-spacing:.18em;color:#d4d7d9}
+.pagina-offhub .offhub-card-decoration {font-size:19px;color:#99a4ab;line-height:1}
+.pagina-offhub .offhub-fan {height:224px;flex-shrink:0;position:relative;width:100%;perspective:900px}
+.pagina-offhub .offhub-poster {position:absolute;display:block;left:50%;top:24px;width:121px;height:177px;overflow:hidden;border-radius:7px;background:#343a40;border:1px solid rgba(255,255,255,.4);box-shadow:0 12px 20px rgba(0,0,0,.54);transform-origin:center bottom;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.pagina-offhub .offhub-poster img {display:block;width:100%;height:100%;object-fit:cover}
+.pagina-offhub .offhub-poster--1 {z-index:1;transform:translateX(-141px) translateY(16px) rotate(-21deg)}
+.pagina-offhub .offhub-poster--2 {z-index:2;transform:translateX(-94px) translateY(-2px) rotate(-10deg)}
+.pagina-offhub .offhub-poster--3 {z-index:3;transform:translateX(-28px) translateY(-4px) rotate(7deg)}
+.pagina-offhub .offhub-poster--4 {z-index:4;transform:translateX(32px) translateY(22px) rotate(20deg)}
+.pagina-offhub .offhub-card:hover .offhub-poster--1,.pagina-offhub .offhub-card:focus-visible .offhub-poster--1 {transform:translateX(-153px) translateY(17px) rotate(-26deg)}
+.pagina-offhub .offhub-card:hover .offhub-poster--4,.pagina-offhub .offhub-card:focus-visible .offhub-poster--4 {transform:translateX(43px) translateY(21px) rotate(23deg)}
+.pagina-offhub .offhub-card-info {display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-top:auto;position:relative;z-index:5}
+.pagina-offhub .offhub-card-info h3 {font-size:28px;letter-spacing:-.045em;font-weight:800;line-height:1.15;margin:0 0 6px}
+.pagina-offhub .offhub-card-info p {font-size:13px;color:#c4cbcf;line-height:1.55;margin:0;max-width:320px}
+.pagina-offhub .offhub-arrow {display:flex;justify-content:center;align-items:center;width:39px;height:39px;flex:none;font-size:22px;border:1px solid #b9c0c4;border-radius:50%;transition:background .2s,color .2s}
+.pagina-offhub .offhub-card:hover .offhub-arrow,.pagina-offhub .offhub-card:focus-visible .offhub-arrow {background:#f5f5f3;color:#141719}
+.pagina-offhub .offhub-card-bottom {display:flex;align-items:center;gap:13px;margin-top:18px;color:#cad0d4;font-size:9px;font-weight:800;letter-spacing:.16em;white-space:nowrap}
+.pagina-offhub .offhub-card-bottom-line {height:1px;flex:1;background:rgba(255,255,255,.26)}
+/* Abstract typographic posters, ready to replace with user's own cover art. */
+.pagina-offhub .offhub-coverart {position:relative;width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;padding:12px 8px;color:#fff}
+.pagina-offhub .offhub-coverart::after {content:"";inset:32% -35% auto;position:absolute;height:115px;border:2px solid rgba(255,255,255,.32);border-radius:50%;transform:rotate(-31deg)}
+.pagina-offhub .offhub-coverart-label {font-size:8px;font-weight:700;line-height:1.3;letter-spacing:.1em;position:relative;z-index:1}
+.pagina-offhub .offhub-coverart strong {position:relative;z-index:1;font-size:clamp(12px,2vw,19px);font-weight:850;letter-spacing:-.07em;line-height:.94;overflow-wrap:anywhere}
+.pagina-offhub .offhub-coverart-mark {width:50px;height:50px;position:absolute;border-radius:50%;top:30%;right:-16px;background:rgba(255,255,255,.15)}
+.pagina-offhub .anime-one {background:linear-gradient(145deg,#225b85,#171c3a)}
+.pagina-offhub .anime-two {background:linear-gradient(145deg,#b84a48,#321c2b)}
+.pagina-offhub .anime-three {background:linear-gradient(145deg,#344c63,#141a25)}
+.pagina-offhub .anime-four {background:linear-gradient(145deg,#8559a0,#28213b)}
+.pagina-offhub .music-one {background:linear-gradient(135deg,#bb6a38,#562840)}
+.pagina-offhub .music-two {background:linear-gradient(145deg,#181c29,#605d86)}
+.pagina-offhub .music-three {background:linear-gradient(145deg,#a73c5e,#292234)}
+.pagina-offhub .music-four {background:linear-gradient(145deg,#60446d,#24234b)}
+.pagina-offhub .travel-one {background:linear-gradient(145deg,#3d887c,#173b43)}
+.pagina-offhub .travel-two {background:linear-gradient(145deg,#ab8255,#4e3336)}
+.pagina-offhub .travel-three {background:linear-gradient(145deg,#447f5b,#223a39)}
+.pagina-offhub .travel-four {background:linear-gradient(145deg,#629aa8,#29485a)}
+.pagina-offhub .offhub-caption {color:#a9b1b7;font-size:13px;line-height:1.6;margin:22px 0 0}
+.pagina-offhub .offhub-closing {border-top:1px solid var(--hub-rule);padding-block:45px 65px}
+.pagina-offhub .offhub-closing .off-shell {display:flex;justify-content:space-between;align-items:center;gap:20px}
+.pagina-offhub .offhub-closing p{font-size:20px;font-weight:700;margin:0;letter-spacing:-.03em}
+.pagina-offhub .offhub-closing a{border-bottom:1px solid #b2bac0;padding-bottom:3px;font-size:14px}
+/* Rodapé igual ao index.html: estilos herdados do style.css. */
+/* Placeholder pages for future sections */
+.pagina-offhub .offhub-subpage{min-height:65vh;max-width:980px;width:calc(100% - 40px);margin-inline:auto;padding-block:85px 100px}
+.pagina-offhub .offhub-back{display:inline-flex;background:#f5f5f3;color:#181a1c;border:1px solid #f5f5f3;padding:11px 17px;border-radius:7px;font-size:13px;font-weight:800;margin-bottom:60px;transition:.2s}
+.pagina-offhub .offhub-back:hover{background:transparent;color:#fff}
+.pagina-offhub .offhub-subpage .eyebrow{font-size:12px;letter-spacing:.2em;color:#b8bec1;font-weight:800}
+.pagina-offhub .offhub-subpage h1{font-size:clamp(48px,9vw,110px);margin-block:17px 25px}
+.pagina-offhub .offhub-subpage .lead{color:#bdc4c8;max-width:650px;font-size:19px;line-height:1.7}
+.pagina-offhub .offhub-placeholder {border:1px solid #454d51;border-radius:12px;padding:23px;margin-top:55px;background:#2b3033;color:#cbd2d6;max-width:670px}
+@media(max-width:850px){
+ .pagina-offhub .offhub-grid{gap:17px}
+ .pagina-offhub .offhub-card{padding:20px 16px 17px;min-height:400px}
+ .pagina-offhub .offhub-card-info h3{font-size:25px}
+ .pagina-offhub .offhub-poster{width:108px;height:165px}
+ .pagina-offhub .offhub-poster--1{transform:translateX(-121px) translateY(17px) rotate(-21deg)}
+ .pagina-offhub .offhub-poster--2{transform:translateX(-83px) translateY(0) rotate(-10deg)}
+ .pagina-offhub .offhub-poster--3{transform:translateX(-23px) translateY(0) rotate(7deg)}
+ .pagina-offhub .offhub-poster--4{transform:translateX(30px) translateY(18px) rotate(20deg)}
+}
+@media(max-width:690px){
+ .pagina-offhub .off-shell {width:calc(100% - 32px)}
+ .pagina-offhub .offhub-hero{padding-block:67px 55px}
+ .pagina-offhub h1{font-size:clamp(59px,14vw,95px)}
+ .pagina-offhub .offhub-hero-bottom{display:block}
+ .pagina-offhub .offhub-hero-bottom p:last-child{margin-top:15px}
+ .pagina-offhub .offhub-grid{grid-template-columns:1fr;gap:18px}
+ .pagina-offhub .offhub-card{min-height:408px;padding:21px}
+ .pagina-offhub .offhub-poster{width:121px;height:177px}
+ .pagina-offhub .offhub-poster--1{transform:translateX(-141px) translateY(16px) rotate(-21deg)}
+ .pagina-offhub .offhub-poster--2{transform:translateX(-94px) translateY(-2px) rotate(-10deg)}
+ .pagina-offhub .offhub-poster--3{transform:translateX(-28px) translateY(-4px) rotate(7deg)}
+ .pagina-offhub .offhub-poster--4{transform:translateX(32px) translateY(22px) rotate(20deg)}
+ .pagina-offhub .offhub-closing .off-shell{display:block}
+ .pagina-offhub .offhub-closing a{display:inline-block;margin-top:13px}
+}
+@media(max-width:410px){
+ .pagina-offhub .offhub-card{min-height:399px}
+ .pagina-offhub .offhub-poster{width:108px;height:165px}
+ .pagina-offhub .offhub-poster--1{transform:translateX(-124px) translateY(16px) rotate(-21deg)}
+ .pagina-offhub .offhub-poster--2{transform:translateX(-86px) translateY(-2px) rotate(-10deg)}
+ .pagina-offhub .offhub-poster--3{transform:translateX(-25px) translateY(-4px) rotate(7deg)}
+ .pagina-offhub .offhub-poster--4{transform:translateX(30px) translateY(22px) rotate(20deg)}
+ .pagina-offhub .offhub-heading h2{font-size:27px}
+}
+@media (prefers-reduced-motion: reduce){.pagina-offhub *, .pagina-offhub *::before, .pagina-offhub *::after {transition:none!important;animation:none!important;scroll-behavior:auto!important}}

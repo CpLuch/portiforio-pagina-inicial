@@ -1,0 +1,2325 @@
+/* ==========================================
+   PORTFÓLIO RICARDO HENRIQUE
+   CSS COMPLETO ATUALIZADO
+
+   FOTOGRAFIA: ESQUERDA
+   PROGRAMAÇÃO: DIREITA
+
+   DESKTOP PRESERVADO
+   MOBILE COM A MESMA COMPOSIÇÃO VISUAL
+========================================== */
+
+
+/* ==========================================
+   1. FONTES E CORES
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --preto: #202326;
+    --branco: #F5F5F3;
+    --cobre: #4A382F;
+
+    --fundo-menu: #000000;
+    --fundo-card: #202326;
+
+    --cinza-claro: rgba(245,245,243,0.75);
+    --borda: rgba(245,245,243,0.15);
+
+    --largura-site: 1040px;
+    --espacamento-grid: 25px;
+
+    /* ANIMAÇÃO INTERATIVA */
+    --tempo-animacao: 0.9s;
+
+    /* FUNDOS E RETRATOS ENTRAM JUNTOS */
+    --tempo-entrada: 1.3s;
+    --atraso-entrada: 0.95s;
+    --duracao-fundo: 1.3s;
+    --atraso-fundo: 0.95s;
+
+    /* ENTRADA DOS TEXTOS */
+    --atraso-titulo: 2.45s;
+    --atraso-descricao: 2.70s;
+
+    --curva-suave:
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ==========================================
+   2. CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--preto);
+    color: var(--branco);
+
+    font-family: 'Figtree', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+
+/* ==========================================
+   3. CONTAINERS
+========================================== */
+
+.navbar > .container,
+.trabalhos > .container,
+.rodape > .container {
+    width: calc(100% - 40px);
+    max-width: var(--largura-site) !important;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* ==========================================
+   4. MENU SUPERIOR
+========================================== */
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+
+    min-height: 72px;
+
+    background: var(--fundo-menu);
+    border-bottom: 1px solid var(--borda);
+
+    animation:
+        menuDescer
+        1.2s
+        var(--curva-suave)
+        both;
+}
+
+@keyframes menuDescer {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   5. LOGO ORIGINAL COM LINK
+========================================== */
+
+.navbar a.navbar-brand {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+    max-height: 52px;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--branco);
+
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+
+    text-decoration: none;
+}
+
+.navbar a.navbar-brand:hover {
+    color: var(--branco);
+}
+
+.navbar a.navbar-brand img {
+    display: block;
+
+    width: auto !important;
+    height: 44px !important;
+
+    max-width: 140px !important;
+    max-height: 44px !important;
+
+    object-fit: contain;
+}
+
+.navbar a.navbar-brand svg {
+    width: auto;
+    height: 44px;
+    max-width: 140px;
+}
+
+.destaque {
+    color: var(--cobre);
+}
+
+
+/* ==========================================
+   6. LINKS DO MENU
+========================================== */
+
+.navbar .nav-link {
+    color: var(--branco);
+
+    font-size: 17px;
+    font-weight: 500;
+
+    margin-left: 24px;
+
+    transition: opacity 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--branco);
+    opacity: 0.75;
+}
+
+
+/* ==========================================
+   7. REDES SOCIAIS DESKTOP
+========================================== */
+
+.menu-redes-desktop {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 24px;
+    margin-left: 35px;
+}
+
+.menu-redes-desktop a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--branco);
+    font-size: 21px;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu-redes-desktop a:hover {
+    color: var(--branco);
+
+    opacity: 0.75;
+    transform: translateY(-3px);
+}
+
+.menu-redes {
+    display: none;
+}
+
+
+/* ==========================================
+   8. BOTÃO HAMBÚRGUER
+========================================== */
+
+.navbar-toggler {
+    display: none;
+
+    padding: 8px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-toggler .linha {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    margin: 5px 0;
+
+    background: var(--branco);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.navbar-toggler[aria-expanded="true"]
+.linha:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"]
+.linha:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"]
+.linha:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ==========================================
+   9. ÁREA PRINCIPAL - HERO
+
+   VALORES MANUAIS DO DESKTOP PRESERVADOS
+========================================== */
+
+.hero {
+    /* CONTROLADAS PELO JAVASCRIPT */
+    --divisao: 50%;
+    --op-dev: 1;
+    --op-foto: 1;
+
+    /* POSIÇÃO DAS FOTOGRAFIAS */
+    --img-dev-x: 52%;
+    --img-foto-x: 53%;
+
+    /* TAMANHO DAS FOTOGRAFIAS */
+    --foto-coder-altura: 90%;
+    --foto-fotografo-altura: 90%;
+
+    /* DESLOCAMENTO VERTICAL */
+    --foto-coder-descer: 35px;
+    --foto-fotografo-descer: 35px;
+
+    /* PARALLAX INICIAL */
+    --parallax-frente-x: 0px;
+    --parallax-frente-y: 0px;
+    --parallax-fundo-x: 0px;
+    --parallax-fundo-y: 0px;
+
+    position: relative;
+    isolation: isolate;
+
+    width: calc(100% - 40px);
+    max-width: var(--largura-site);
+
+    height: 600px;
+    min-height: 0;
+
+    margin: 0 auto;
+
+    background: transparent;
+
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+
+/* ==========================================
+   10. FUNDOS DECORATIVOS
+========================================== */
+
+.hero-fundo {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+    pointer-events: none;
+
+    transition:
+        clip-path var(--tempo-animacao) ease-out,
+        opacity var(--tempo-animacao) ease-out;
+}
+
+.hero-fundo::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-repeat: no-repeat;
+
+    opacity: 0.22;
+    pointer-events: none;
+
+    /* SOMENTE MOVIMENTO HORIZONTAL */
+    transform: translate3d(
+        var(--parallax-fundo-x, 0px),
+        0px,
+        0px
+    );
+
+    transition:
+        transform var(--tempo-animacao) ease-out;
+}
+
+
+/* ==========================================
+   11. FUNDO FOTOGRAFIA - ESQUERDA
+========================================== */
+
+.hero-fundo-fotografia {
+    clip-path: inset(
+        0 calc(100% - var(--divisao)) 0 0
+    );
+
+    opacity: var(--op-dev);
+
+    animation:
+        entrarFundoEsquerda
+        var(--duracao-fundo)
+        var(--curva-suave)
+        var(--atraso-fundo)
+        backwards;
+}
+
+.hero-fundo-fotografia::before {
+    background-image:
+        url("imagens/fundo-fotografia.png");
+
+    background-size: 34% auto;
+
+    /* POSIÇÃO PERSONALIZADA */
+    background-position: 15% 140%;
+}
+
+
+/* ==========================================
+   12. FUNDO CODER - DIREITA
+========================================== */
+
+.hero-fundo-coder {
+    clip-path: inset(
+        0 0 0 var(--divisao)
+    );
+
+    opacity: var(--op-foto);
+
+    animation:
+        entrarFundoDireita
+        var(--duracao-fundo)
+        var(--curva-suave)
+        var(--atraso-fundo)
+        backwards;
+}
+
+.hero-fundo-coder::before {
+    background-image:
+        url("imagens/fundo-coder.png");
+
+    background-size: 34% auto;
+
+    /* POSIÇÃO PERSONALIZADA */
+    background-position: 90% 110%;
+}
+
+
+/* ==========================================
+   13. ENTRADA DOS FUNDOS
+========================================== */
+
+@keyframes entrarFundoEsquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-90px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrarFundoDireita {
+    from {
+        opacity: 0;
+        transform: translateX(90px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================
+   14. CAMADAS DOS RETRATOS
+========================================== */
+
+.hero-imagem {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+    pointer-events: none;
+
+    transition:
+        clip-path var(--tempo-animacao) ease-out,
+        opacity var(--tempo-animacao) ease-in-out;
+}
+
+
+/* ==========================================
+   15. FOTOGRAFIA - ESQUERDA
+========================================== */
+
+.hero-fotografia {
+    clip-path: inset(
+        0 calc(100% - var(--divisao)) 0 0
+    );
+
+    opacity: var(--op-dev);
+
+    animation:
+        entradaEsquerda
+        var(--tempo-entrada)
+        var(--curva-suave)
+        var(--atraso-entrada)
+        backwards;
+}
+
+
+/* ==========================================
+   16. PROGRAMAÇÃO - DIREITA
+========================================== */
+
+.hero-programacao {
+    clip-path: inset(
+        0 0 0 var(--divisao)
+    );
+
+    opacity: var(--op-foto);
+
+    animation:
+        entradaDireita
+        var(--tempo-entrada)
+        var(--curva-suave)
+        var(--atraso-entrada)
+        backwards;
+}
+
+
+/* ==========================================
+   17. IMAGENS DOS RETRATOS
+========================================== */
+
+.hero-imagem::before,
+.hero-imagem::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-repeat: no-repeat;
+    pointer-events: none;
+
+    transition:
+        transform var(--tempo-animacao) ease-out,
+        background-position var(--tempo-animacao) ease-out;
+}
+
+/* FOTOGRAFIA - ESBOÇO */
+
+.hero-fotografia::before,
+.hero-fotografia::after {
+    background-image:
+        url("imagens/fotografia.png");
+
+    background-size:
+        auto var(--foto-fotografo-altura);
+
+    background-position:
+        var(--img-foto-x)
+        calc(100% + var(--foto-fotografo-descer));
+}
+
+/* PROGRAMADOR - FOTO REAL */
+
+.hero-programacao::before,
+.hero-programacao::after {
+    background-image:
+        url("imagens/programacao.png");
+
+    background-size:
+        auto var(--foto-coder-altura);
+
+    background-position:
+        var(--img-dev-x)
+        calc(100% + var(--foto-coder-descer));
+}
+
+
+/* ==========================================
+   18. PARALLAX DOS RETRATOS
+   APENAS MOVIMENTO HORIZONTAL
+========================================== */
+
+/* CAMADA TRASEIRA */
+
+.hero-imagem::before {
+    opacity: 0.22;
+
+    filter:
+        blur(14px)
+        brightness(0.7);
+
+    transform: translate3d(
+        calc(-1.5 * var(--parallax-frente-x, 0px)),
+        0px,
+        0px
+    ) scale(1.06);
+}
+
+/* CAMADA PRINCIPAL */
+
+.hero-imagem::after {
+    opacity: 1;
+
+    transform: translate3d(
+        calc(-1.5 * var(--parallax-frente-x, 0px)),
+        0px,
+        0px
+    );
+}
+
+
+/* ==========================================
+   19. ENTRADA LATERAL DOS PERSONAGENS
+========================================== */
+
+@keyframes entradaEsquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entradaDireita {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================
+   20. TEXTOS DA APRESENTAÇÃO
+========================================== */
+
+.hero-texto {
+    position: absolute;
+
+    /* POSIÇÃO ORIGINAL DO DESKTOP */
+    top: 205px;
+
+    width: min(43%, 440px);
+
+    z-index: 3;
+    pointer-events: none;
+
+    transform: none;
+
+    transition:
+        opacity var(--tempo-animacao) ease-in-out;
+}
+
+
+/* ==========================================
+   21. TEXTO FOTÓGRAFO - ESQUERDA
+========================================== */
+
+.texto-fotografia {
+    left: 0;
+    right: auto;
+
+    /* LARGURA ORIGINAL */
+    width: 270px;
+
+    text-align: left;
+    opacity: var(--op-dev);
+}
+
+.texto-fotografia h2 {
+    color: var(--branco);
+
+    /* TAMANHO ORIGINAL PERSONALIZADO */
+    font-size: 78px;
+
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+
+    margin-bottom: 10px;
+}
+
+.texto-fotografia p {
+    color: var(--cinza-claro);
+
+    font-size: 18px;
+    line-height: 1.5;
+
+    max-width: 260px;
+    margin: 0;
+
+    text-align: left;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+
+/* ==========================================
+   22. TEXTO CODER - DIREITA
+========================================== */
+
+.texto-programacao {
+    position: absolute;
+
+    right: 0;
+    left: auto;
+
+    /* LARGURA ORIGINAL */
+    width: 270px;
+
+    text-align: left;
+    opacity: var(--op-foto);
+}
+
+.texto-programacao h1 {
+    color: var(--branco);
+
+    /* TAMANHO ORIGINAL PERSONALIZADO */
+    font-size: 78px;
+
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+
+    margin-bottom: 10px;
+}
+
+.texto-programacao p {
+    color: var(--cinza-claro);
+
+    font-size: 18px;
+    line-height: 1.5;
+
+    max-width: 260px;
+    margin: 0;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+
+/* ==========================================
+   23. TÍTULOS APARECEM APÓS AS IMAGENS
+========================================== */
+
+.texto-programacao h1,
+.texto-fotografia h2 {
+    animation:
+        tituloAparecer
+        0.7s
+        ease-out
+        var(--atraso-titulo)
+        backwards;
+}
+
+@keyframes tituloAparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   24. DESCRIÇÕES APARECEM POR ÚLTIMO
+========================================== */
+
+.hero-texto p {
+    animation:
+        descricaoAparecer
+        0.7s
+        ease-out
+        var(--atraso-descricao)
+        backwards;
+}
+
+@keyframes descricaoAparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   25. ÁREAS CLICÁVEIS
+========================================== */
+
+.hero-link {
+    position: absolute;
+
+    top: 0;
+    height: 100%;
+
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* FOTOGRAFIA - ESQUERDA */
+
+.link-fotografia {
+    left: 0;
+    width: 50%;
+}
+
+/* CODER - DIREITA */
+
+.link-programacao {
+    left: 50%;
+
+    width: 50%;
+}
+
+.hero-link:focus-visible {
+    outline: 3px solid var(--branco);
+    outline-offset: -5px;
+}
+
+
+/* ==========================================
+   26. TRABALHOS EM DESTAQUE
+========================================== */
+
+.trabalhos {
+    background: var(--preto);
+
+    padding-top: 65px !important;
+    padding-bottom: 85px !important;
+
+    /* LINHA DIVISÓRIA SUAVE */
+    border-top: 1px solid rgba(245, 245, 243, 0.08);
+
+    /* SOMBRA BRANCA PARA BAIXO */
+    box-shadow:
+        inset 0 5px 10px -5px
+        rgba(255, 255, 255, 0.10);
+}
+
+.trabalhos .mb-5 {
+    margin-bottom: 35px !important;
+}
+
+.secao-legenda {
+    display: none;
+}
+
+.secao-titulo {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    width: 100%;
+
+    color: var(--branco);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.secao-titulo::before,
+.secao-titulo::after {
+    content: "";
+
+    height: 1px;
+    flex: 1;
+
+    background: var(--borda);
+}
+
+.secao-descricao {
+    color: var(--cinza-claro);
+
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+
+/* ==========================================
+   27. GRID DOS PROJETOS
+========================================== */
+
+.trabalhos .row {
+    --bs-gutter-x: 25px;
+    --bs-gutter-y: 25px;
+
+    width: min(100%, 1017px);
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* ==========================================
+   28. CARDS DOS PROJETOS
+========================================== */
+
+.trabalho-card {
+    height: 100%;
+
+    background: var(--fundo-card);
+    color: var(--branco);
+
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.trabalho-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cobre);
+}
+
+/* CAPAS */
+
+.trabalho-capa {
+    height: 175px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-position: center;
+    background-size: cover;
+}
+
+.trabalho-capa span {
+    color: var(--branco);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.capa-figma {
+    background: linear-gradient(
+        135deg,
+        var(--preto),
+        var(--cobre)
+    );
+}
+
+.capa-fotografia {
+    background: linear-gradient(
+        135deg,
+        var(--cobre),
+        var(--preto)
+    );
+}
+
+.capa-perfil {
+    background: var(--cobre);
+}
+
+/* TEXTOS DOS CARDS */
+
+.trabalho-card .card-body {
+    padding: 20px;
+}
+
+.trabalho-categoria {
+    color: var(--cinza-claro);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.trabalho-card .card-title {
+    color: var(--branco);
+
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+}
+
+.trabalho-card .card-text {
+    color: var(--cinza-claro);
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   29. ANIMAÇÃO DOS PROJETOS
+========================================== */
+
+.trabalhos .secao-titulo,
+.trabalhos .secao-descricao,
+.trabalhos .trabalho-card {
+    animation:
+        entradaConteudo
+        0.8s
+        ease-out
+        backwards;
+}
+
+/* PROJETOS APARECEM DEPOIS DA HERO */
+
+.trabalhos .secao-titulo {
+    animation-delay: 3.40s;
+}
+
+.trabalhos .secao-descricao {
+    animation-delay: 3.55s;
+}
+
+.trabalhos .row > div:nth-child(1)
+.trabalho-card {
+    animation-delay: 3.70s;
+}
+
+.trabalhos .row > div:nth-child(2)
+.trabalho-card {
+    animation-delay: 3.85s;
+}
+
+.trabalhos .row > div:nth-child(3)
+.trabalho-card {
+    animation-delay: 4s;
+}
+
+@keyframes entradaConteudo {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   30. RODAPÉ
+========================================== */
+
+.rodape {
+    position: relative;
+
+    width: 100%;
+    min-height: 95px;
+
+    padding: 38px 0 24px;
+
+    background: var(--fundo-menu);
+
+    border-top: 1px solid var(--borda);
+}
+
+.rodape-barra {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+.copyright {
+    margin: 0;
+
+    color: var(--cinza-claro);
+    font-size: 15px;
+}
+
+.rodape-menu {
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+.rodape-menu a {
+    color: var(--cinza-claro);
+
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: color 0.3s ease;
+}
+
+.rodape-menu a:hover {
+    color: var(--branco);
+}
+
+
+/* ==========================================
+   31. BOTÃO VOLTAR AO TOPO
+========================================== */
+
+.rodape-topo {
+    position: absolute;
+
+    top: -59px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 60px;
+
+    background: transparent;
+    border: none;
+
+    color: var(--branco);
+    text-decoration: none;
+
+    isolation: isolate;
+    z-index: 2;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.rodape-topo::before {
+    content: "";
+
+    position: absolute;
+    inset: -5px -5px -20px -5px;
+
+    background: var(--fundo-menu);
+
+    border: none;
+    border-radius: 120px 120px 0 0;
+
+    z-index: 0;
+
+    transition:
+        transform 0.5s ease-in-out;
+}
+
+.rodape-topo:hover::before,
+.rodape-topo:focus-visible::before,
+.rodape-topo:active::before {
+    background: var(--fundo-menu);
+    transform: translateY(-10px);
+}
+
+
+/* ==========================================
+   32. ÍCONE VOLTAR AO TOPO
+========================================== */
+
+.rodape-topo span {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+
+    color: var(--branco);
+
+    font-size: 24px;
+    line-height: 1;
+
+    transform: translateY(0);
+
+    transition:
+        transform 0.5s ease-in-out;
+}
+
+.rodape-topo .icone-topo {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    /* TAMANHO PERSONALIZADO PRESERVADO */
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+
+    transform: translateY(0);
+
+    transition:
+        transform 0.5s ease-in-out;
+}
+
+/* SETA SOBE SUAVEMENTE */
+
+.rodape-topo span,
+.rodape-topo .icone-topo {
+    transition: transform 0.7s ease-in-out;
+}
+
+.rodape-topo:hover span,
+.rodape-topo:focus-visible span,
+.rodape-topo:active span,
+.rodape-topo:hover .icone-topo,
+.rodape-topo:focus-visible .icone-topo,
+.rodape-topo:active .icone-topo {
+    transform: translateY(-4px);
+}
+
+
+/* ==========================================
+   33. RESPONSIVIDADE TABLET
+
+   VALORES ORIGINAIS PRESERVADOS
+========================================== */
+
+@media (max-width: 1079.98px) {
+
+    .hero {
+        height: clamp(450px, 55vw, 600px);
+
+        --foto-coder-altura: 75%;
+        --foto-fotografo-altura: 75%;
+
+        --foto-coder-descer: 25px;
+        --foto-fotografo-descer: 25px;
+    }
+
+    .hero-texto {
+        top: 34%;
+        width: 35%;
+    }
+
+    .texto-fotografia {
+        width: 30%;
+    }
+
+    .texto-programacao h1,
+    .texto-fotografia h2 {
+        font-size: clamp(30px, 4vw, 46px);
+    }
+
+    .hero-texto p {
+        font-size: 15px;
+    }
+}
+
+
+/* ==========================================
+   34. MENU MOBILE E TABLET
+========================================== */
+
+@media (max-width: 991.98px) {
+
+    .navbar {
+        min-height: 64px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .menu-redes-desktop {
+        display: none !important;
+    }
+
+    /* MENU ABERTO */
+
+    .navbar-collapse {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: var(--fundo-menu);
+
+        padding: 16px 24px 30px;
+
+        border-top: 1px solid var(--borda);
+
+        box-shadow:
+            0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    /* LINKS CENTRALIZADOS */
+
+    .navbar .navbar-nav {
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        margin: 0 auto !important;
+        padding: 18px 0;
+    }
+
+    .navbar .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .nav-link {
+        display: inline-block;
+        width: auto;
+
+        margin: 0;
+        padding: 14px 10px;
+
+        color: var(--branco);
+
+        font-size: 19px;
+        font-weight: 500;
+
+        text-align: center;
+    }
+
+    /* REDES SOCIAIS MOBILE */
+
+    .menu-redes {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+        gap: 30px;
+
+        margin-top: 20px;
+        padding-top: 24px;
+
+        border-top: 1px solid var(--borda);
+    }
+
+    .menu-redes a {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: var(--branco);
+        font-size: 24px;
+
+        text-decoration: none;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    .menu-redes a:hover {
+        color: var(--branco);
+
+        opacity: 0.75;
+        transform: translateY(-3px);
+    }
+
+    /* RODAPÉ */
+
+    .rodape-topo {
+        width: 96px;
+        height: 54px;
+        top: -53px;
+    }
+}
+
+
+/* ==========================================
+   35. RESPONSIVIDADE MOBILE
+
+   COMPOSIÇÃO VISUAL IGUAL À DO DESKTOP,
+   MAS PROPORCIONAL À TELA
+========================================== */
+
+@media (max-width: 767.98px) {
+
+    /* LOGO E MENU */
+
+    .navbar a.navbar-brand {
+        max-height: 42px;
+        font-size: 23px;
+    }
+
+    .navbar a.navbar-brand img {
+        height: 36px !important;
+
+        max-height: 36px !important;
+        max-width: 110px !important;
+    }
+
+    .navbar a.navbar-brand svg {
+        height: 36px;
+        max-width: 110px;
+    }
+
+
+    /* ======================================
+       HERO MOBILE
+
+       MAIOR ALTURA PARA REPRODUZIR
+       A COMPOSIÇÃO DO DESKTOP
+    ====================================== */
+
+    .hero {
+        width: calc(100% - 32px);
+
+        height: clamp(330px, 88vw, 420px);
+        min-height: 0;
+
+        /* RETRATOS */
+        --foto-coder-altura: 78%;
+        --foto-fotografo-altura: 78%;
+
+        --foto-coder-descer: 14px;
+        --foto-fotografo-descer: 14px;
+
+        /* CENTRALIZADOS */
+        --img-dev-x: 50%;
+        --img-foto-x: 50%;
+    }
+
+
+    /* ======================================
+       FUNDOS DECORATIVOS
+    ====================================== */
+
+    .hero-fundo::before {
+        background-size: 34% auto;
+        opacity: 0.30;
+    }
+
+    .hero-fundo-fotografia::before {
+        background-position: 12% 95%;
+    }
+
+    .hero-fundo-coder::before {
+        background-position: 88% 95%;
+    }
+
+
+    /* ======================================
+       TEXTOS NAS LATERAIS
+       COMO NO DESKTOP
+    ====================================== */
+
+    .hero-texto {
+        top: 25%;
+
+        transform: none;
+        z-index: 3;
+    }
+
+    /* FOTÓGRAFO - ESQUERDA */
+
+    .texto-fotografia {
+        left: 0;
+        right: auto;
+
+        width: 40%;
+        text-align: left;
+    }
+
+    /* CODER - DIREITA */
+
+    .texto-programacao {
+        right: 0;
+        left: auto;
+
+        width: 37%;
+        text-align: left;
+    }
+
+
+    /* ======================================
+       TÍTULOS PROPORCIONAIS
+    ====================================== */
+
+    .texto-fotografia h2,
+    .texto-programacao h1 {
+        font-size: clamp(19px, 6vw, 31px);
+
+        line-height: 1.12;
+        letter-spacing: -0.045em;
+
+        margin-bottom: 7px;
+
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+
+
+    /* ======================================
+       DESCRIÇÕES VISÍVEIS NO MOBILE
+
+       ANTES ELAS ESTAVAM OCULTAS
+    ====================================== */
+
+    .hero-texto p {
+        display: block;
+
+        font-size: clamp(11px, 2.8vw, 13px);
+        line-height: 1.45;
+
+        max-width: 94%;
+        margin: 0;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* ======================================
+       ENTRADAS APENAS PELAS LATERAIS
+    ====================================== */
+
+    @keyframes entradaEsquerda {
+        from {
+            transform: translateX(-80px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes entradaDireita {
+        from {
+            transform: translateX(80px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+
+    /* ======================================
+       TRABALHOS MOBILE
+    ====================================== */
+
+    .trabalhos {
+        padding-top: 40px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .trabalhos .mb-5 {
+        margin-bottom: 28px !important;
+    }
+
+    .secao-titulo {
+        font-size: 15px;
+        gap: 10px;
+    }
+
+    .secao-descricao {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .trabalho-capa {
+        height: 190px;
+    }
+
+    .trabalho-card {
+        border-radius: 12px;
+    }
+
+    .trabalho-card .card-title {
+        font-size: 20px;
+    }
+
+    .trabalho-card .card-text {
+        font-size: 15px;
+    }
+
+
+    /* ======================================
+       RODAPÉ MOBILE
+    ====================================== */
+
+    .rodape {
+        padding: 35px 0 25px;
+    }
+
+    .rodape-barra {
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        gap: 16px;
+    }
+
+    .rodape-menu {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .copyright,
+    .rodape-menu a {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================
+   36. CELULARES PEQUENOS
+========================================== */
+
+@media (max-width: 480px) {
+
+    .navbar .nav-link {
+        font-size: 18px;
+    }
+
+    .menu-redes {
+        gap: 25px;
+    }
+
+    .menu-redes a {
+        font-size: 22px;
+    }
+
+    /* COMPOSIÇÃO CENTRALIZADA */
+
+    .hero {
+        --foto-coder-altura: 78%;
+        --foto-fotografo-altura: 78%;
+
+        --foto-coder-descer: 12px;
+        --foto-fotografo-descer: 12px;
+    }
+
+    .hero-texto {
+        top: 25%;
+    }
+
+    .texto-fotografia {
+        width: 40%;
+    }
+
+    .texto-programacao {
+        width: 37%;
+    }
+
+    /* RODAPÉ */
+
+    .rodape-topo {
+        width: 84px;
+        height: 48px;
+        top: -47px;
+    }
+
+    .rodape-topo .icone-topo {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* ==========================================
+   37. TELAS ATÉ 360PX
+========================================== */
+
+@media (max-width: 360px) {
+
+    .hero {
+        height: 320px;
+    }
+
+    .texto-fotografia h2,
+    .texto-programacao h1 {
+        font-size: 20px;
+    }
+
+    .hero-texto p {
+        font-size: 11px;
+        max-width: 96%;
+    }
+
+    .hero-fundo::before {
+        opacity: 0.24;
+    }
+}
+
+
+/* ==========================================
+   38. ACESSIBILIDADE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* ====================================================
+   39. REFINAMENTOS RESPONSIVOS - 2026
+   O visual de desktop (>=1080px) permanece intacto.
+   Os ajustes abaixo só atuam quando há menos espaço.
+==================================================== */
+
+/* Os links e ícones podem encolher sem mudar a barra original. */
+@media (min-width: 992px) and (max-width: 1079.98px) {
+    .navbar .nav-link {
+        font-size: 15px;
+        margin-left: 14px;
+    }
+
+    .navbar .menu-redes-desktop {
+        gap: 17px;
+        margin-left: 22px;
+    }
+}
+
+/* Tablet e notebook de tela estreita. */
+@media (min-width: 768px) and (max-width: 1079.98px) {
+    .hero {
+        height: clamp(430px, 56vw, 580px);
+    }
+
+    .texto-programacao,
+    .texto-fotografia {
+        width: min(32%, 270px);
+    }
+
+    .texto-programacao h1,
+    .texto-fotografia h2 {
+        font-size: clamp(33px, 5.2vw, 58px);
+    }
+
+    .hero-texto p {
+        font-size: clamp(13px, 1.65vw, 17px);
+    }
+}
+
+/* A barra e o rodapé seguem a largura disponível no celular. */
+@media (max-width: 991.98px) {
+    .navbar > .container {
+        position: relative;
+    }
+
+    .navbar-collapse {
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .navbar .nav-link {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar > .container,
+    .trabalhos > .container,
+    .rodape > .container {
+        width: calc(100% - 32px);
+    }
+
+    .hero {
+        height: clamp(340px, 91vw, 510px);
+        width: calc(100% - 32px);
+    }
+
+    .texto-programacao h1,
+    .texto-fotografia h2 {
+        font-size: clamp(19px, 4.7vw, 35px);
+    }
+
+    .hero-texto p {
+        font-size: clamp(11px, 2.7vw, 14px);
+    }
+
+    .rodape-topo .icone-topo {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rodape-topo .icone-topo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .rodape-menu {
+        gap: clamp(12px, 4vw, 20px);
+    }
+}
+
+/* Títulos e cards não causam rolagem lateral em telas estreitas. */
+@media (max-width: 359.98px) {
+    .texto-programacao h1,
+    .texto-fotografia h2 {
+        font-size: clamp(17px, 5.4vw, 20px);
+    }
+
+    .secao-titulo {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+}
+
+
+/* =============================================================
+   40. COMPOSIÇÃO RESPONSIVA DO HERO (REFERÊNCIA: RETRATO ESTÁVEL)
+   Em janelas estreitas, retrato, títulos e espaço vertical
+   são dimensionados juntos. O desktop amplo não é alterado.
+   A altura da imagem muda somente com o layout; não é animada.
+============================================================= */
+
+/* A transição do desktop amplo para o notebook é contínua: até
+   1280px, aumentamos gradualmente a foto e ajustamos o texto.
+   Em 1280px estes valores coincidem com o design original. */
+@media (min-width: 1080px) and (max-width: 1279.98px) {
+    .hero {
+        --foto-coder-altura: calc(90% + 230.4px - 18vw);
+        --foto-fotografo-altura: calc(90% + 230.4px - 18vw);
+        --foto-coder-descer: calc(23.5vw - 265.8px);
+        --foto-fotografo-descer: calc(23.5vw - 265.8px);
+    }
+
+    .texto-programacao h1,
+    .texto-fotografia h2 {
+        font-size: clamp(69px, 6.1vw, 78px);
+    }
+}
+
+/* Laptops e tablets horizontais: rosto mais alto e um pouco maior.
+   Os títulos continuam à esquerda e à direita do retrato. */
+@media (min-width: 768px) and (max-width: 1079.98px) {
+    .hero {
+        height: clamp(420px, 55.6vw, 600px);
+        --foto-coder-altura: 96%;
+        --foto-fotografo-altura: 96%;
+        --foto-coder-descer: -12px;
+        --foto-fotografo-descer: -12px;
+    }
+
+    .hero-texto {
+        top: clamp(96px, calc(35vw - 173px), 205px);
+    }
+
+    .texto-fotografia,
+    .texto-programacao {
+        width: min(34%, 300px);
+    }
+
+    .texto-fotografia h2,
+    .texto-programacao h1 {
+        font-size: clamp(40px, 6.4vw, 70px);
+        line-height: 1.08;
+        white-space: nowrap;
+    }
+
+    .hero-texto p {
+        font-size: clamp(13px, 1.55vw, 17px);
+        line-height: 1.45;
+    }
+}
+
+/* Telas estreitas: retrato não acompanha o cursor nem exige arraste.
+   Ele mantém o mesmo enquadramento ao reduzir a largura da janela.
+   O JavaScript mantém a divisão central (50%) nesse intervalo. */
+@media (max-width: 767.98px) {
+    .hero {
+        width: calc(100% - 32px);
+        height: clamp(290px, calc(49vw + 120px), 420px);
+        --foto-coder-altura: calc(98% + clamp(0px, 46px - 6vw, 23px));
+        --foto-fotografo-altura: calc(98% + clamp(0px, 46px - 6vw, 23px));
+        --foto-coder-descer: clamp(-20px, calc(2.1vw - 28px), -12px);
+        --foto-fotografo-descer: clamp(-20px, calc(2.1vw - 28px), -12px);
+        --img-dev-x: 52%;
+        --img-foto-x: 53%;
+    }
+
+    .hero-texto {
+        top: 23%;
+        width: 40%;
+    }
+
+    .texto-fotografia {
+        left: 0;
+        right: auto;
+        width: 40%;
+        text-align: left;
+    }
+
+    .texto-programacao {
+        left: auto;
+        right: 0;
+        width: 39%;
+        text-align: left;
+    }
+
+    .texto-fotografia h2,
+    .texto-programacao h1 {
+        font-size: clamp(20px, 6.6vw, 51px);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+
+    .hero-texto p {
+        display: block;
+        font-size: clamp(11px, 1.85vw, 14px);
+        line-height: 1.43;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    /* Quebras automáticas ficam melhores que os <br> fixos. */
+    .hero-texto p br {
+        display: none;
+    }
+}
+
+
+/* ==========================================
+   HERO RESPONSIVO — TOTALMENTE ESTÁTICO
+   Desktop original preservado
+========================================== */
+
+@media (max-width: 991.98px) {
+
+    .hero {
+        width: calc(100% - 32px);
+        height: clamp(340px, 62vw, 540px);
+        overflow: hidden;
+
+        /* Travar o estado inicial do desktop */
+        --divisao: 50% !important;
+        --op-dev: 1 !important;
+        --op-foto: 1 !important;
+
+        /* Impedir qualquer movimento das imagens */
+        --parallax-frente-x: 0px !important;
+        --parallax-frente-y: 0px !important;
+        --parallax-fundo-x: 0px !important;
+        --parallax-fundo-y: 0px !important;
+
+        /* Enquadramento dos retratos */
+        --foto-coder-altura: 98%;
+        --foto-fotografo-altura: 98%;
+
+        --foto-coder-descer: -5px;
+        --foto-fotografo-descer: -8px;
+
+        --img-dev-x: 50%;
+        --img-foto-x: 60%;
+    }
+
+    /* Desativar TODAS as animações da hero */
+    .hero,
+    .hero *,
+    .hero *::before,
+    .hero *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Fotografia: metade esquerda fixa */
+    .hero .hero-fotografia,
+    .hero .hero-fundo-fotografia {
+        clip-path: inset(0 50% 0 0) !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Programação: metade direita fixa */
+    .hero .hero-programacao,
+    .hero .hero-fundo-coder {
+        clip-path: inset(0 0 0 50%) !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Fundos decorativos originais */
+    .hero .hero-fundo {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .hero .hero-fundo::before {
+        opacity: 0.30 !important;
+        transform: none !important;
+    }
+
+    .hero .hero-fundo-fotografia::before {
+        background-position: 15% 95%;
+    }
+
+    .hero .hero-fundo-coder::before {
+        background-position: 85% 95%;
+    }
+
+    /* Manter os títulos visíveis e imóveis */
+    .hero .hero-texto {
+        display: block !important;
+        position: absolute;
+        top: 24% !important;
+        opacity: 1 !important;
+        transform: none !important;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    /* Fotógrafo */
+    .hero .texto-fotografia {
+        left: 2% !important;
+        right: auto !important;
+        width: 48% !important;
+        text-align: left !important;
+    }
+
+    /* Coder */
+    .hero .texto-programacao {
+        left: auto !important;
+        right: 2% !important;
+        width: 48% !important;
+        text-align: right !important;
+    }
+
+    /* Tamanho proporcional dos títulos */
+    .hero .texto-fotografia h2,
+    .hero .texto-programacao h1 {
+        display: block !important;
+        font-size: clamp(18px, 4.9vw, 44px) !important;
+        line-height: 1.1;
+        white-space: nowrap !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    /* Remover somente as frases de descrição */
+    .hero .hero-texto p {
+        display: none !important;
+    }
+
+    /* Dois botões invisíveis */
+    .hero .link-fotografia {
+        left: 0 !important;
+        width: 50% !important;
+    }
+
+    .hero .link-programacao {
+        left: 50% !important;
+        width: 50% !important;
+    }
+}
+
+/* Enquadramento para celulares menores */
+@media (max-width: 575.98px) {
+
+    .hero {
+        height: clamp(330px, 90vw, 420px);
+
+        --foto-coder-altura: 125%;
+        --foto-fotografo-altura: 125%;
+
+        --foto-coder-descer: -12px;
+        --foto-fotografo-descer: -12px;
+    }
+}
+
+/* ==========================================
+   TÍTULO CODER — AJUSTE DESKTOP
+========================================== */
+
+@media (min-width: 992px) {
+
+    /* Alinhar título com a descrição */
+    .hero .texto-programacao h1 {
+        position: relative;
+        left: -12px;
+        white-space: nowrap;
+    }
+
+    /* Sinais < e > mais finos */
+    .hero .texto-programacao .sinal-coder {
+        font-weight: 400;
+        font-size: 0.90em;
+        letter-spacing: -0.10em;
+    }
+}
+/* ================================================================
+   HERO RESPONSIVO ESTÁTICO — 24/11/2026
+   Carregado DEPOIS do style.css original; não substitui seu CSS.
+   Fotografia à esquerda e programação à direita.
+   ================================================================ */
+
+/* O desktop mantém a animação original e não mostra a imagem extra. */
+.hero-mobile {
+    display: none;
+}
+
+/* Refinamento do título coder APENAS no desktop. */
+@media (min-width: 992px) {
+    .hero .texto-programacao h1 {
+        position: relative;
+        left: -12px;
+        white-space: nowrap;
+    }
+
+    .hero .texto-programacao h1 .sinal-coder {
+        font-weight: 400;
+        font-size: 0.82em;
+        letter-spacing: -0.07em;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Desliga visualmente toda a animação original nesse intervalo. */
+    .hero {
+        display: none !important;
+    }
+
+    /* Uma única imagem: todo o desenho reduz na mesma proporção. */
+    .hero-mobile {
+        display: block;
+        position: relative;
+        width: calc(100% - 32px);
+        max-width: 1040px;
+        margin: 0 auto;
+        overflow: hidden;
+        isolation: isolate;
+    }
+
+    .hero-mobile-imagem {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Títulos são HTML real, usando a Figtree já carregada no site. */
+    .hero-mobile-titulo {
+        position: absolute;
+        top: 34%;
+        z-index: 2;
+        width: 46%;
+        margin: 0;
+        padding: 0;
+        color: #F5F5F3;
+        font-family: 'Figtree', Arial, sans-serif;
+        font-size: clamp(14px, 4.5vw, 42px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.045em;
+        white-space: nowrap;
+        pointer-events: none;
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .titulo-mobile-foto {
+        left: 2%;
+        right: auto;
+        text-align: left;
+    }
+
+    .titulo-mobile-coder {
+        left: auto;
+        right: 2%;
+        text-align: right;
+    }
+
+    /* Fina espessura somente nos sinais de código. */
+    .titulo-mobile-coder .sinal-coder {
+        font-weight: 400;
+        font-size: 0.82em;
+        letter-spacing: -0.07em;
+    }
+
+    /* Dois links invisíveis ocupam metade exata da imagem cada um. */
+    .hero-mobile-link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: 3;
+        display: block;
+        background: transparent;
+        cursor: pointer;
+        transition: none !important;
+    }
+
+    .hero-mobile-foto {
+        left: 0;
+    }
+
+    .hero-mobile-coder {
+        right: 0;
+    }
+
+    .hero-mobile-link:focus-visible {
+        outline: 3px solid #F5F5F3;
+        outline-offset: -3px;
+    }
+}
+
+/* ==========================================
+   AJUSTE PONTUAL — TEXTOS ESMAECEM AO SELECIONAR LADO
+   Sem alterar os retratos, fundos ou a divisao.
+========================================== */
+@media (min-width: 992px) {
+    .hero .hero-texto {
+        transition: opacity 0.22s ease-out !important;
+    }
+
+    /* Mouse na fotografia: esconder somente texto coder. */
+    .hero:has(.link-fotografia:is(:hover, :focus-visible)) .texto-programacao {
+        opacity: 0 !important;
+    }
+
+    .hero:has(.link-fotografia:is(:hover, :focus-visible)) .texto-fotografia {
+        opacity: 1 !important;
+    }
+
+    /* Mouse no coder: esconder somente texto fotografia. */
+    .hero:has(.link-programacao:is(:hover, :focus-visible)) .texto-fotografia {
+        opacity: 0 !important;
+    }
+
+    .hero:has(.link-programacao:is(:hover, :focus-visible)) .texto-programacao {
+        opacity: 1 !important;
+    }
+}
+
+/* Navegação com cinco itens, mantendo a largura do cabeçalho. */
+@media (min-width: 992px) {
+    .navbar .nav-link { margin-left: 14px; padding-left: 0.25rem; padding-right: 0.25rem; white-space: nowrap; }
+    .menu-redes-desktop { gap: 14px; margin-left: 18px; }
+}
+
+
+/* ====================================================
+   CORREÇÃO DO VÍDEO: ZONAS CLICÁVEIS LATERAIS DO BANNER
+   Os retratos continuam com até 1040px, centralizados.
+   Estas duas áreas transparentes cobrem somente as
+   margens escuras laterais na mesma altura do banner.
+==================================================== */
+.hero-click-container {
+    position: relative;
+    width: 100%;
+}
+
+.hero-click-extra {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Mesma conta da largura da .hero: 100% - 40px, limitado a 1040px */
+    width: calc((100% - min(calc(100% - 40px), var(--largura-site))) / 2);
+    z-index: 6;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero-click-extra-foto { left: 0; }
+.hero-click-extra-coder { right: 0; }
+
+.hero-click-extra:focus-visible {
+    outline: 3px solid var(--branco);
+    outline-offset: -3px;
+}
+
+/* Em tablet e celular, manter a navegação responsiva já existente. */
+@media (max-width: 991.98px) {
+    .hero-click-extra { display: none !important; }
+}

@@ -1,0 +1,153 @@
+/* JOGOS — CSS exclusivo da página. Não substitui o style.css nem o modooff.css. */
+:root { --game-bg:#202326; --game-white:#f5f5f3; --game-muted:#b7babd; }
+.pagina-jogos { background:var(--game-bg); color:var(--game-white); font-family:'Figtree',system-ui,sans-serif; }
+.pagina-jogos a { text-decoration:none; }
+.pagina-jogos .jogos-shell { max-width:1040px; width:calc(100% - 40px); margin-inline:auto; }
+.jogos-main { min-height:66vh; }
+.jogos-logo-fallback { font-size:29px; font-weight:800; letter-spacing:-.06em; }
+.jogos-logo-ponto { color:#9fa5a8; }
+.jogos-intro { padding-top:clamp(56px,7vw,92px); padding-bottom:clamp(28px,4.5vw,52px); }
+.pagina-jogos .jogos-voltar { display:inline-flex; gap:10px; align-items:center; padding:clamp(10px,1.2vw,13px) clamp(13px,2vw,22px); border:1px solid #f5f5f3; border-radius:5px; font-weight:700; font-size:clamp(13px,1.4vw,15px); line-height:1.4; max-width:100%; white-space:normal; background:#f5f5f3; color:#202326; transition: background .2s, transform .2s; margin-bottom:clamp(32px,5.5vw,61px); }
+.pagina-jogos .jogos-voltar:hover { background:transparent; color:#f5f5f3; transform:translateY(-2px); }
+.pagina-jogos .jogos-voltar:focus-visible { outline:3px solid #f5f5f3; outline-offset:4px; }
+.jogos-etiqueta { font-size:12px; color:#b2b8bd; letter-spacing:.17em; font-weight:800; margin:0 0 14px; }
+.jogos-intro h1 { font-size:clamp(43px,7.4vw,82px); font-weight:800; letter-spacing:-.072em; line-height:1.1; max-width:880px; margin:0 0 22px; overflow-wrap:break-word; }
+.jogos-subtitulo { font-size:clamp(16px,1.9vw,19px); line-height:1.75; color:rgba(245,245,243,.73); max-width:760px; margin:0; }
+.jogos-secao { padding-top:20px; padding-bottom:clamp(56px,7vw,90px); }
+.jogos-cabecalho-secao { margin:0 0 30px; }
+.jogos-cabecalho-secao h2 { font-size:clamp(29px,3.8vw,42px); font-weight:800; letter-spacing:-.045em; margin:0 0 6px; }
+.jogos-cabecalho-secao p { color:var(--game-muted); font-size:15px; margin:0; }
+.jogos-franquias { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:18px 20px; align-items:start; }
+.jogos-grupo { min-width:0; border:1px solid rgba(245,245,243,.055); border-radius:9px; transition: background .24s, border .24s; }
+.jogos-grupo:hover, .jogos-grupo:focus-within { background:rgba(245,245,243,.035); border-color:rgba(245,245,243,.13); }
+.jogos-grupo-trigger { display:flex; flex-direction:column; align-items:center; width:100%; background:transparent; border:0; color:inherit; cursor:pointer; padding:22px 12px 25px; border-radius:8px; text-align:center; }
+.jogos-grupo-trigger:focus-visible, .jogos-avulso-card:focus-visible { outline:2px solid #f5f5f3; outline-offset:2px; }
+.jogos-leque { position:relative; display:block; width:100%; max-width:270px; height:230px; flex:none; }
+.jogos-leque img { position:absolute; top:14px; left:50%; width:136px; height:199px; aspect-ratio:2/3; object-fit:contain; background:#35393c; border:2px solid rgba(245,245,243,.76); border-radius:3px; box-shadow:0 12px 26px rgba(0,0,0,.56); transform-origin:50% 85%; transition:transform .42s cubic-bezier(.25,.9,.3,1); }
+.jogos-leque img:nth-child(1) { z-index:1; transform:translateX(calc(-50% - 30px)) translateY(7px) rotate(-12deg); }
+.jogos-leque img:nth-child(2) { z-index:2; transform:translateX(calc(-50% + 32px)) translateY(7px) rotate(12deg); }
+.jogos-leque img:nth-child(3) { z-index:3; transform:translateX(-50%) translateY(-1px); }
+.jogos-leque.leque-dois img:nth-child(1) { transform:translateX(calc(-50% - 29px)) rotate(-12deg); }
+.jogos-leque.leque-dois img:nth-child(2) { transform:translateX(calc(-50% + 29px)) rotate(12deg); }
+@media (hover:hover) and (pointer:fine) {
+ .jogos-grupo:hover .jogos-leque img:nth-child(1), .jogos-grupo-trigger:focus-visible .jogos-leque img:nth-child(1) { transform:translateX(calc(-50% - 53px)) translateY(7px) rotate(-19deg); }
+ .jogos-grupo:hover .jogos-leque img:nth-child(2), .jogos-grupo-trigger:focus-visible .jogos-leque img:nth-child(2) { transform:translateX(calc(-50% + 55px)) translateY(6px) rotate(19deg); }
+ .jogos-grupo:hover .jogos-leque img:nth-child(3), .jogos-grupo-trigger:focus-visible .jogos-leque img:nth-child(3) { transform:translateX(-50%) translateY(-13px); }
+}
+.jogos-grupo-nome { font-size:clamp(19px,2.3vw,24px); font-weight:750; line-height:1.25; letter-spacing:-.04em; display:block; }
+.jogos-grupo-contador { color:var(--game-muted); font-size:13px; margin-top:7px; display:block; }
+.jogos-grupo-abrir { margin-top:11px; display:inline-flex; gap:8px; align-items:center; font-size:13px; font-weight:600; color:rgba(245,245,243,.8); }
+.jogos-grupo-abrir i { transition:transform .25s ease; }
+.jogos-grupo:hover .jogos-grupo-abrir i { transform:translate(2px,-2px); }
+.jogos-card { display:grid; grid-template-columns:clamp(125px,18vw,190px) minmax(0,1fr); gap:clamp(16px,3vw,32px); padding:clamp(13px,2.2vw,21px); background:#2a2e32; border:1px solid rgba(245,245,243,.08); border-radius:7px; align-items:stretch; }
+.jogos-capa { width:100%; aspect-ratio:2/3; background:#34383b; border-radius:3px; overflow:hidden; align-self:start; }
+.jogos-capa img { display:block; width:100%; height:100%; object-fit:contain; }
+.jogos-sem-capa { display:grid; place-items:center; width:100%; height:100%; font-size:14px; color:var(--game-white); padding:15px; text-align:center; }
+.jogos-card-dados { min-width:0; display:flex; flex-direction:column; }
+.jogos-card-dados h3 { font-size:clamp(20px,2.65vw,28px); line-height:1.19; letter-spacing:-.03em; font-weight:750; margin:2px 0 7px; overflow-wrap:break-word; }
+.jogos-card-ano { color:#b7bec4; font-size:13px; font-weight:600; margin:0 0 16px; }
+.jogos-card-sinopse { color:#d2d3d5; font-size:clamp(14px,1.5vw,16px); line-height:1.65; margin:0 0 22px; }
+.jogos-card-rodape { display:flex; justify-content:flex-end; align-items:flex-end; margin-top:auto; }
+.jogos-nota { font-size:clamp(18px,2.5vw,25px); font-weight:800; letter-spacing:-.02em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.jogos-nota-estrela { color:#efcb73; margin-right:7px; }
+.jogos-avulsos-secao { padding-top:0; }
+.jogos-avulsos { display:grid; grid-template-columns:1fr; gap:15px; }
+.jogos-avulso-card { display:block; color:inherit; border-radius:7px; }
+.jogos-avulso-card.is-audio { cursor:pointer; }
+.jogos-avulso-card.is-audio:focus-visible { outline-offset:3px; }
+.jogos-erro { color:#f5f5f3; padding:20px 0; }
+.jogos-audio-container { margin-top:28px; }
+.jogos-audio-container[hidden], .jogos-audio-desktop-msg[hidden] { display:none; }
+.jogos-audio-toggle { border:1px solid rgba(245,245,243,.25); background:rgba(245,245,243,.08); border-radius:6px; padding:10px 16px; color:var(--game-white); font-weight:650; font-size:14px; transition: background .2s; }
+.jogos-audio-toggle:hover { background:rgba(245,245,243,.16); }
+.jogos-audio-msg { max-width:640px; margin:8px 0 0; color:#b6bcc0; font-size:13px; line-height:1.5; }
+/* Controle geral aparece somente em telas que precisam de toque. No desktop, o leque é a área de áudio. */
+@media (hover:hover) and (pointer:fine) { .jogos-audio-container { display:none!important; } }
+@media (max-width:880px) { .jogos-franquias { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:620px) {
+ .pagina-jogos .jogos-shell { width:calc(100% - 32px); }
+ .jogos-franquias { grid-template-columns:1fr; gap:7px; }
+ .jogos-grupo-trigger { padding:13px 8px 19px; }
+ .jogos-leque { height:216px; }
+ .jogos-leque img { height:186px; width:126px; }
+ .jogos-card { grid-template-columns:clamp(90px,26vw,130px) minmax(0,1fr); gap:13px; padding:12px; }
+ .jogos-card-dados h3 { font-size:17px; }
+ .jogos-card-ano { margin-bottom:9px; }
+ .jogos-card-sinopse { font-size:13px; line-height:1.5; margin-bottom:13px; }
+ .jogos-nota { font-size:18px; }
+}
+@media (max-width:365px) {
+ .jogos-card { grid-template-columns:86px minmax(0,1fr); gap:10px; }
+ .jogos-card-dados h3 { font-size:16px; }
+ .jogos-card-sinopse { font-size:12px; }
+}
+@media (prefers-reduced-motion:reduce) { .jogos-leque img, .jogos-grupo-abrir i, .pagina-jogos .jogos-voltar { transition:none!important; } }
+
+
+/* JANELA MODAL DE FRANQUIA — todos os cards aparecem sobre o fundo escurecido */
+body.pagina-jogos.jogos-modal-ativo { overflow:hidden; }
+.jogos-modal[hidden] { display:none !important; }
+.jogos-modal {
+  position:fixed; inset:0; z-index:9999;
+  display:grid; place-items:center; padding:clamp(12px,3vw,30px);
+  background:rgba(4,6,9,.87); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  animation:jogos-sombra-in .22s ease-out both;
+}
+.jogos-modal-painel {
+  width:min(100%,920px); max-height:calc(100vh - 24px); max-height:calc(100dvh - 24px);
+  display:flex; flex-direction:column; min-height:0;
+  background:#23272b; color:#f5f5f3; border:1px solid rgba(245,245,243,.18);
+  border-radius:14px; box-shadow:0 35px 100px rgba(0,0,0,.6);
+  overflow:hidden; animation:jogos-painel-in .25s cubic-bezier(.2,.75,.2,1) both;
+}
+.jogos-modal-painel:focus { outline:none; }
+.jogos-modal-cabecalho {
+  flex:none; display:flex; align-items:flex-start; justify-content:space-between;
+  gap:18px; padding:clamp(20px,3.3vw,32px) clamp(18px,3.3vw,35px) clamp(16px,2.1vw,22px);
+  border-bottom:1px solid rgba(245,245,243,.10);
+}
+.jogos-modal-identificacao { min-width:0; }
+.jogos-modal-etiqueta { font-size:11px; color:#bac1c5; font-weight:800; letter-spacing:.15em; margin:0 0 8px; }
+.jogos-modal-cabecalho h2 {
+  font-size:clamp(26px,4.5vw,39px); font-weight:800; letter-spacing:-.045em; line-height:1.2;
+  margin:0 0 5px; overflow-wrap:anywhere;
+}
+.jogos-modal-cabecalho #jogos-modal-contador { color:#aeb6bc; font-size:14px; margin:0; }
+.jogos-modal-fechar {
+  display:grid; place-items:center; width:clamp(37px,4vw,44px); height:clamp(37px,4vw,44px);
+  flex:none; border:1px solid rgba(245,245,243,.22); border-radius:50%;
+  background:rgba(245,245,243,.08); color:#f5f5f3; font-size:19px;
+  cursor:pointer; transition:background .2s, transform .2s;
+}
+.jogos-modal-fechar:hover { background:rgba(245,245,243,.18); transform:rotate(90deg); }
+.jogos-modal-fechar:focus-visible { outline:2px solid #f5f5f3; outline-offset:3px; }
+.jogos-modal-lista {
+  min-height:0; overflow-y:auto; overscroll-behavior:contain;
+  overflow-anchor:none; scroll-behavior:auto;
+  padding:clamp(13px,2.7vw,26px) clamp(13px,3.1vw,32px) clamp(22px,3vw,32px);
+  display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(12px,2vw,18px);
+  scrollbar-color:#767e83 #23272b; scrollbar-width:thin;
+}
+.jogos-modal-lista .jogos-card { grid-template-columns:clamp(125px,18vw,180px) minmax(0,1fr); }
+.jogos-modal-lista .jogos-capa { margin:0; }
+@media (max-width:620px) {
+  .jogos-modal { padding:10px; }
+  .jogos-modal-painel { max-height:calc(100vh - 20px); max-height:calc(100dvh - 20px); border-radius:10px; }
+  .jogos-modal-cabecalho { gap:10px; padding:20px 17px 16px; }
+  .jogos-modal-lista { padding:12px; gap:12px; }
+  .jogos-modal-lista .jogos-card { grid-template-columns:clamp(88px,27vw,128px) minmax(0,1fr); padding:12px; gap:12px; }
+  .jogos-modal-lista .jogos-card-dados h3 { font-size:clamp(16px,4.2vw,20px); }
+  .jogos-modal-lista .jogos-card-sinopse { font-size:13px; line-height:1.53; }
+}
+@media (max-width:370px) {
+  .jogos-modal-lista .jogos-card { grid-template-columns:83px minmax(0,1fr); gap:10px; padding:9px; }
+  .jogos-modal-lista .jogos-card-dados h3 { font-size:16px; }
+  .jogos-modal-lista .jogos-card-sinopse { font-size:12px; }
+  .jogos-modal-fechar { width:36px; height:36px; }
+}
+@keyframes jogos-sombra-in { from {opacity:0;} to {opacity:1;} }
+@keyframes jogos-painel-in { from {opacity:0;transform:translateY(14px) scale(.985);} to {opacity:1;transform:translateY(0) scale(1);} }
+@media (prefers-reduced-motion:reduce) {
+  .jogos-modal, .jogos-modal-painel { animation:none !important; }
+  .jogos-modal-fechar { transition:none !important; }
+}

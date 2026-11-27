@@ -1,0 +1,103 @@
+/* VIAGENS — cinco cards com informações, fotografia e Google Maps compacto.
+   O menu e o rodapé permanecem no estilo compartilhado do site. */
+.pagina-viagens {
+  --viagens-bg:#202326;
+  --viagens-ink:#f5f5f3;
+  --viagens-muted:#b7babd;
+  min-width:320px;
+  background:var(--viagens-bg);
+  color:var(--viagens-ink);
+  font-family:'Figtree',system-ui,sans-serif;
+}
+.pagina-viagens .viagens-shell {max-width:1040px;width:calc(100% - 40px);margin-inline:auto;}
+.pagina-viagens .viagens-main {min-height:66vh;}
+.pagina-viagens .viagens-voltar {
+  display:inline-flex;gap:10px;align-items:center;
+  padding:clamp(10px,1.2vw,13px) clamp(13px,2vw,22px);
+  border:1px solid #f5f5f3;border-radius:5px;
+  font:700 clamp(13px,1.4vw,15px)/1.4 'Figtree',system-ui,sans-serif;
+  max-width:100%;white-space:normal;text-decoration:none;
+  background:#f5f5f3;color:#202326;
+  transition:background .2s,transform .2s,color .2s;
+  margin-bottom:clamp(32px,5.5vw,61px);
+}
+.pagina-viagens .viagens-voltar:hover {background:transparent;color:#f5f5f3;transform:translateY(-2px);}
+.pagina-viagens .viagens-voltar:focus-visible {outline:3px solid #f5f5f3;outline-offset:4px;}
+.pagina-viagens .viagens-intro {padding-top:clamp(56px,7vw,92px);padding-bottom:clamp(28px,4.5vw,52px);}
+.pagina-viagens .viagens-etiqueta {font-size:12px;color:#b2b8bd;letter-spacing:.17em;font-weight:800;margin:0 0 14px;}
+.pagina-viagens .viagens-intro h1 {font-size:clamp(43px,7.4vw,82px);font-weight:800;letter-spacing:-.072em;line-height:1.1;margin:0 0 22px;}
+.pagina-viagens .viagens-ponto {color:#9aa3a9;}
+.pagina-viagens .viagens-subtitulo {font-size:clamp(16px,1.9vw,19px);line-height:1.75;color:rgba(245,245,243,.73);max-width:800px;margin:0;}
+.pagina-viagens .viagens-secao {padding-top:20px;padding-bottom:clamp(86px,9vw,130px);}
+.pagina-viagens .viagens-cabecalho-secao {display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:29px;}
+.pagina-viagens .viagens-cabecalho-secao h2 {font-size:clamp(29px,3.8vw,42px);font-weight:800;letter-spacing:-.045em;margin:0 0 6px;}
+.pagina-viagens .viagens-cabecalho-secao p {color:var(--viagens-muted);font-size:15px;margin:0;}
+.pagina-viagens .viagens-contagem {color:#aeb7bc;letter-spacing:.13em;font-size:11px;font-weight:800;white-space:nowrap;padding-bottom:8px;}
+
+/* Um card por linha, semelhante ao bloco de destino + mapa da referência.
+   A foto ganha espaço próprio e o mapa fica menor que no layout antigo. */
+.pagina-viagens .viagens-grid {display:grid;grid-template-columns:minmax(0,1fr);gap:24px;}
+.pagina-viagens .viagens-card {
+  display:grid;
+  grid-template-columns:minmax(0,1.07fr) minmax(0,1.1fr) minmax(0,.94fr);
+  min-height:320px;
+  background:#2a2e31;
+  border:1px solid rgba(245,245,243,.14);
+  border-radius:14px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.pagina-viagens .viagens-card-detalhes {min-width:0;padding:clamp(22px,2.8vw,33px);display:flex;flex-direction:column;}
+.pagina-viagens .viagens-card-numero {display:block;color:#aeb8c0;font-weight:800;font-size:11px;letter-spacing:.17em;margin-bottom:24px;}
+.pagina-viagens .viagens-card-titulo {font-size:clamp(24px,2.75vw,34px);font-weight:800;letter-spacing:-.055em;line-height:1.12;margin:0 0 10px;overflow-wrap:anywhere;}
+.pagina-viagens .viagens-card-regiao {color:#cbd1d3;font-size:13px;line-height:1.5;margin:0;}
+.pagina-viagens .viagens-card-linha {width:42px;height:1px;background:rgba(245,245,243,.42);margin:22px 0;}
+.pagina-viagens .viagens-card-descricao {color:#d3d5d6;font-size:13px;line-height:1.72;margin:0 0 23px;}
+.pagina-viagens .viagens-abrir-google {
+  align-self:flex-start;display:inline-flex;align-items:center;gap:15px;
+  border:1px solid #f5f5f3;background:#f5f5f3;color:#202326;
+  border-radius:5px;padding:11px 14px;margin-top:auto;
+  font-size:12px;font-weight:800;text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.pagina-viagens .viagens-abrir-google:hover {background:transparent;color:#f5f5f3;}
+.pagina-viagens .viagens-abrir-google:focus-visible {outline:3px solid white;outline-offset:3px;}
+
+.pagina-viagens .viagens-card-foto {min-width:0;position:relative;background:#30383b;overflow:hidden;}
+.pagina-viagens .viagens-card-foto img {display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.pagina-viagens .viagens-card[data-destino="genipabu"] .viagens-card-foto img {object-position:50% 60%;}
+.pagina-viagens .viagens-card[data-destino="porto"] .viagens-card-foto img {object-position:50% 50%;}
+.pagina-viagens .viagens-card[data-destino="salto"] .viagens-card-foto img {object-position:50% 40%;}
+.pagina-viagens .viagens-card-foto::after {content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 25px rgba(0,0,0,.13);}
+
+.pagina-viagens .viagens-card-mapa {display:flex;flex-direction:column;min-width:0;background:#24282b;padding:18px;gap:10px;}
+.pagina-viagens .viagens-card-mapa-topo {display:flex;align-items:center;justify-content:space-between;gap:10px;color:#cbd2d6;font-size:11px;font-weight:800;letter-spacing:.09em;}
+.pagina-viagens .viagens-card-mapa-iframe {
+  display:block;flex:1;width:100%;min-height:218px;border:0;
+  border-radius:8px;background:#41474a;
+}
+.pagina-viagens .viagens-card-mapa-aviso {font-size:10px;line-height:1.45;color:#aeb7bc;margin:0;}
+
+@media(max-width:960px) {
+  .pagina-viagens .viagens-card {grid-template-columns:minmax(0,1.05fr) minmax(0,1.1fr);}
+  .pagina-viagens .viagens-card-foto {min-height:320px;}
+  .pagina-viagens .viagens-card-mapa {grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);align-items:center;padding:16px;gap:10px 18px;}
+  .pagina-viagens .viagens-card-mapa-topo {align-self:end;}
+  .pagina-viagens .viagens-card-mapa-iframe {grid-column:2;grid-row:1 / 3;min-height:200px;max-height:240px;}
+  .pagina-viagens .viagens-card-mapa-aviso {align-self:start;}
+}
+@media(max-width:620px) {
+  .pagina-viagens .viagens-shell {width:calc(100% - 32px);}
+  .pagina-viagens .viagens-grid {gap:20px;}
+  .pagina-viagens .viagens-cabecalho-secao {align-items:flex-start;}
+  .pagina-viagens .viagens-contagem {display:none;}
+  .pagina-viagens .viagens-card {grid-template-columns:1fr;}
+  .pagina-viagens .viagens-card-detalhes {padding:24px;}
+  .pagina-viagens .viagens-card-numero {margin-bottom:15px;}
+  .pagina-viagens .viagens-card-linha {margin:16px 0;}
+  .pagina-viagens .viagens-card-foto {height:230px;min-height:0;}
+  .pagina-viagens .viagens-card-mapa {grid-column:1;display:flex;gap:11px;padding:14px;}
+  .pagina-viagens .viagens-card-mapa-iframe {height:205px;min-height:205px;max-height:205px;width:100%;}
+  .pagina-viagens .viagens-card-mapa-aviso {margin:0;}
+}
+@media(prefers-reduced-motion:reduce){.pagina-viagens .viagens-voltar,.pagina-viagens .viagens-abrir-google{transition:none!important;}}
